@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nexus Coding | Pour un monde meilleur !</title>
+    <description>Blog dédié à la technologie de la Blockchain et au développement informatique en général</description>
+    <link>https://chiheb-nexus.github.io/</link>
+    <atom:link href="https://chiheb-nexus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 12 May 2018 16:47:48 +0100</pubDate>
+    <lastBuildDate>Sat, 12 May 2018 16:47:48 +0100</lastBuildDate>
+    <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Génération des adresses Bitcoin</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://qph.fs.quoracdn.net/main-qimg-6c2c189f74309b175549396b1eb00b7f&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;adresse-bitcoin-&quot;&gt;Adresse Bitcoin ?&lt;/h2&gt; &lt;p&gt;Une adresse Bitcoin, ou simplement une adresse, est un identifiant de 26 à 35 caractères alphanumériques, commençant par le chiffre 1 ou 3, qui représente une destination possible pour un paiement bitcoin. Les adresses peuvent être générées gratuitement par n’importe quel utilisateur de Bitcoin. Par exemple, en utilisant &lt;a href=&quot;https://en.bitcoin.it/wiki/Bitcoin_Core&quot;&gt;Bitcoin Core&lt;/a&gt;, vous pouvez cliquer sur “New Address” et créer une adresse. Il est également possible d’obtenir une adresse Bitcoin en utilisant un compte auprès d’un service d’échange ou de portefeuille en ligne. [&lt;a href=&quot;https://en.bitcoin.it/wiki/Address&quot;&gt;Source: bitcoin wiki&lt;/a&gt;]&lt;/p&gt; &lt;p&gt;Il y a actuellement trois formats d’adresses...</description>
+        <pubDate>Thu, 10 May 2018 21:46:31 +0100</pubDate>
+        <link>https://chiheb-nexus.github.io/btcaddress/</link>
+        <guid isPermaLink="true">https://chiheb-nexus.github.io/btcaddress/</guid>
+        
+        <category>bitcoin</category>
+        
+        <category>sha256</category>
+        
+        <category>ripemd160</category>
+        
+        <category>base58</category>
+        
+        <category>blockchain</category>
+        
+        
+        <category>bitcoin</category>
+        
+        <category>blockchain</category>
+        
+      </item>
+    
+  </channel>
+</rss>
