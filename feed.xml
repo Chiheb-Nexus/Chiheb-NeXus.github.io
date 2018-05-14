@@ -5,9 +5,37 @@
     <description>Blog dédié à la technologie de la Blockchain et au développement informatique en général</description>
     <link>https://chiheb-nexus.github.io/</link>
     <atom:link href="https://chiheb-nexus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 May 2018 17:11:20 +0100</pubDate>
-    <lastBuildDate>Sat, 12 May 2018 17:11:20 +0100</lastBuildDate>
+    <pubDate>Mon, 14 May 2018 20:26:04 +0100</pubDate>
+    <lastBuildDate>Mon, 14 May 2018 20:26:04 +0100</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Ethereum Smart Contract</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/0*PFwVdgw-2tqj8LZV.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;Les contrats intelligents (en anglais Smart Contracts) sont des protocoles informatiques qui facilitent, vérifient et exécutent la négociation ou l’exécution d’un contrat, ou qui rendent une clause contractuelle inutile (car rattachée au contrat intelligent). Les contrats intelligents ont généralement une interface utilisateur et émulent la logique des clauses contractuelles.&lt;/p&gt; &lt;p&gt;Les partisans des contrats intelligents affirment que de nombreux types de clauses contractuelles peuvent ainsi être partiellement ou totalement auto-exécutées ou exécutées à la validation ou les deux.&lt;/p&gt; &lt;p&gt;Les contrats intelligents visent à assurer une sécurité supérieure à la mise en application de la loi sur les contrats...</description>
+        <pubDate>Sun, 13 May 2018 19:21:31 +0100</pubDate>
+        <link>https://chiheb-nexus.github.io/smartcontract/</link>
+        <guid isPermaLink="true">https://chiheb-nexus.github.io/smartcontract/</guid>
+        
+        <category>ethereum</category>
+        
+        <category>web3</category>
+        
+        <category>web3.py</category>
+        
+        <category>infura.io</category>
+        
+        <category>blockchain</category>
+        
+        <category>smart contract</category>
+        
+        <category>solidity</category>
+        
+        
+        <category>ethereum</category>
+        
+        <category>blockchain</category>
+        
+      </item>
     
       <item>
         <title>Génération des adresses Bitcoin</title>
