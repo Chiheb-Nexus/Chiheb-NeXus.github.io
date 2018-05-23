@@ -5,9 +5,33 @@
     <description>Blog dédié à la technologie de la Blockchain et au développement informatique en général</description>
     <link>https://chiheb-nexus.github.io/</link>
     <atom:link href="https://chiheb-nexus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 May 2018 23:50:24 +0100</pubDate>
-    <lastBuildDate>Tue, 15 May 2018 23:50:24 +0100</lastBuildDate>
+    <pubDate>Wed, 23 May 2018 04:30:24 +0100</pubDate>
+    <lastBuildDate>Wed, 23 May 2018 04:30:24 +0100</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Ethereum RLP: Explication</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*-Q00GpGTphTOtBWPRu1e3g.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;Avant de continuer la lecture, je tiens à dire que cet article est une tentative d’explication du schéma d’encodage RLP, utilisé par Ethereum, d’une manière simple et concrète avec des exemples.&lt;/p&gt; &lt;p&gt;Ce qui va suivre, c’est une tentative d’explication de ce que j’ai pu comprendre de l’encodage RLP qu’Ethereum utilise. Et c’est à vous de chercher encore et de valider ou non ce que vous aller rencontrer tout le long de cet article.&lt;/p&gt; &lt;h2 id=&quot;définition&quot;&gt;Définition:&lt;/h2&gt; &lt;p&gt;Le schéma d’encodage RLP (Recursive Length Prefix) est un schéma de sérialisation d’objets spatialement efficace utilisé dans Ethereum.&lt;/p&gt; &lt;p&gt;La spécifité de ce...</description>
+        <pubDate>Mon, 21 May 2018 03:17:31 +0100</pubDate>
+        <link>https://chiheb-nexus.github.io/ethereumrlp/</link>
+        <guid isPermaLink="true">https://chiheb-nexus.github.io/ethereumrlp/</guid>
+        
+        <category>ethereum</category>
+        
+        <category>sha3</category>
+        
+        <category>rlp</category>
+        
+        <category>encoding</category>
+        
+        <category>decoding</category>
+        
+        
+        <category>bitcoin</category>
+        
+        <category>blockchain</category>
+        
+      </item>
     
       <item>
         <title>Ethereum Smart Contract</title>
