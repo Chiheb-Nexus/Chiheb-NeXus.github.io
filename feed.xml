@@ -5,9 +5,43 @@
     <description>Blog dédié à la technologie de la Blockchain et au développement informatique en général</description>
     <link>https://chiheb-nexus.github.io/</link>
     <atom:link href="https://chiheb-nexus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 23 May 2018 04:30:24 +0100</pubDate>
-    <lastBuildDate>Wed, 23 May 2018 04:30:24 +0100</lastBuildDate>
+    <pubDate>Tue, 29 May 2018 17:44:00 +0100</pubDate>
+    <lastBuildDate>Tue, 29 May 2018 17:44:00 +0100</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Ethereum POA en utilisant Geth</title>
+        <description>&lt;p&gt;&lt;img src=&quot;http://www.newsonjapan.com/images/article/oracles6.png&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;définition-du-consensus-proof-of-authority-poa-preuve-dautorité&quot;&gt;Définition du consensus Proof Of Authority (POA, Preuve d’autorité):&lt;/h2&gt; &lt;p&gt;Proof-of-authority (PoA) est un algorithme utilisé avec la technologie de blockchain qui fournit des transactions relativement rapides grâce à un mécanisme de consensus basé sur l’identité en tant que pieu (l’identité étant une preuve suffisante pour la validation des transactions).&lt;/p&gt; &lt;p&gt;Dans les réseaux basés sur le POA, les transactions et les blocs sont validés par des comptes approuvés, appelés validateurs. Les validateurs exécutent un logiciel leur permettant de mettre des transactions dans des blocs. Le processus est automatisé et n’exige pas que les validateurs surveillent constamment leurs...</description>
+        <pubDate>Mon, 28 May 2018 16:21:31 +0100</pubDate>
+        <link>https://chiheb-nexus.github.io/ethereumpoa/</link>
+        <guid isPermaLink="true">https://chiheb-nexus.github.io/ethereumpoa/</guid>
+        
+        <category>ethereum</category>
+        
+        <category>web3</category>
+        
+        <category>web3.py</category>
+        
+        <category>geth</category>
+        
+        <category>blockchain</category>
+        
+        <category>POA</category>
+        
+        <category>Proof Of Authority</category>
+        
+        <category>consensus</category>
+        
+        
+        <category>ethereum</category>
+        
+        <category>blockchain</category>
+        
+        <category>POA</category>
+        
+        <category>consensus</category>
+        
+      </item>
     
       <item>
         <title>Ethereum RLP: Explication</title>

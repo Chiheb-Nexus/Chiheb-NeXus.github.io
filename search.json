@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Ethereum POA en utilisant Geth",
+      "category" : "ethereumblockchainPOAconsensus",
+      "tags"     : "ethereum, web3, web3.py, geth, blockchain, POA, Proof Of Authority, and consensus",
+      "url"      : "/ethereumpoa/",
+      "date"     : "28 May 2018"
+    } ,
+  
+    {
       "title"    : "Ethereum RLP: Explication",
       "category" : "bitcoinblockchain",
       "tags"     : "ethereum, sha3, rlp, encoding, and decoding",
