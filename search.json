@@ -30,6 +30,14 @@
       "tags"     : "bitcoin, sha256, ripemd160, base58, and blockchain",
       "url"      : "/btcaddress/",
       "date"     : "10 May 2018"
+    } ,
+  
+    {
+      "title"    : "Initiez vous avec les Dapps d&#39;Ethereum",
+      "category" : "ethereumblockchaindapps",
+      "tags"     : "ethereum, dapps, geth, parity, and blockchain",
+      "url"      : "/initiez-vous-avec-les-dapps/",
+      "date"     : "01 Jan 2018"
     } 
   
 ]
