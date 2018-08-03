@@ -5,8 +5,8 @@
     <description>Blog dédié à la technologie de la Blockchain et au développement informatique en général</description>
     <link>https://chiheb-nexus.github.io/</link>
     <atom:link href="https://chiheb-nexus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Aug 2018 13:29:34 +0100</pubDate>
-    <lastBuildDate>Thu, 02 Aug 2018 13:29:34 +0100</lastBuildDate>
+    <pubDate>Fri, 03 Aug 2018 23:22:48 +0100</pubDate>
+    <lastBuildDate>Fri, 03 Aug 2018 23:22:48 +0100</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -120,9 +120,35 @@
       </item>
     
       <item>
+        <title>Parity: Vos premiers pas avec Ethereum</title>
+        <description>&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt; &lt;p&gt;&lt;a href=&quot;https://www.parity.io/&quot;&gt;Parity&lt;/a&gt; est un client fiable et performant,permettant de se connecter au réseau Ethereum sous licence GPLv3. Parity, par défaut, permet un accès rapide à un portefeuille d’Ethereum type Parity Wallet. L’outil permet de:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Créer et gérer les comptes Ethereum&lt;/li&gt; &lt;li&gt;Gérer les ethers et les jetons Ethereum&lt;/li&gt; &lt;li&gt;Créer et enregistrer les jetons&lt;/li&gt; &lt;li&gt;Créer, déployer et interagir avec les smarts contracts&lt;/li&gt; &lt;li&gt;etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Par défaut, Parity démarre un serveur JSONRPC sur &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:8545&lt;/code&gt; et un serveur de websockets sur &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:8546&lt;/code&gt; (ceci est configurable) et supporte plusieurs autres type d’APIs.&lt;/p&gt; &lt;h3 id=&quot;installation&quot;&gt;Installation:&lt;/h3&gt; &lt;p&gt;Il suffit d’aller sur &lt;a href=&quot;https://www.parity.io&quot;&gt;https://www.parity.io&lt;/a&gt;...</description>
+        <pubDate>Tue, 30 Jan 2018 21:46:31 +0100</pubDate>
+        <link>https://chiheb-nexus.github.io/vos-premiers-pas-avec-ethereum/</link>
+        <guid isPermaLink="true">https://chiheb-nexus.github.io/vos-premiers-pas-avec-ethereum/</guid>
+        
+        <category>ethereum</category>
+        
+        <category>dapps</category>
+        
+        <category>geth</category>
+        
+        <category>parity</category>
+        
+        <category>blockchain</category>
+        
+        
+        <category>ethereum</category>
+        
+        <category>blockchain</category>
+        
+        <category>dapps</category>
+        
+      </item>
+    
+      <item>
         <title>Initiez vous avec les Dapps d'Ethereum</title>
         <description>&lt;p&gt;&lt;strong&gt;Création d’environnement de travail:&lt;/strong&gt; Dans cet example de Dapps d’Ethereum on va utiliser: &lt;a href=&quot;https://www.python.org/&quot;&gt;Python&lt;/a&gt;, &lt;a href=&quot;https://geth.ethereum.org/downloads/&quot;&gt;Geth&lt;/a&gt;, &lt;a href=&quot;https://github.com/ethereum/web3.py&quot;&gt;web3.py&lt;/a&gt; et &lt;a href=&quot;https://github.com/ethereum/web3.js/&quot;&gt;web3.js&lt;/a&gt;.&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;Installation de &lt;code class=&quot;highlighter-rouge&quot;&gt;Python&lt;/code&gt;: Il suffit d’installer le binaire de ce &lt;a href=&quot;https://www.python.org/&quot;&gt;lien&lt;/a&gt; et ajouter Python à votre viariable d’environnement si vous utiliser Windows. Sinon, généralement, Python est installé par défaut sur votre machine si vous utilisez Gnu\Linux, OS X et *BSD.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;Installation de &lt;code class=&quot;highlighter-rouge&quot;&gt;Geth&lt;/code&gt;: Il suffit d’installer Geth de ce &lt;a href=&quot;https://geth.ethereum.org/downloads/&quot;&gt;lien&lt;/a&gt; puis l’ajouter à votre viariable d’environnement. Si vous utiliser une distribution basée sur Debian, faites ceci: &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span...</description>
-        <pubDate>Mon, 01 Jan 2018 21:46:31 +0100</pubDate>
+        <pubDate>Sat, 20 Jan 2018 21:46:31 +0100</pubDate>
         <link>https://chiheb-nexus.github.io/initiez-vous-avec-les-dapps/</link>
         <guid isPermaLink="true">https://chiheb-nexus.github.io/initiez-vous-avec-les-dapps/</guid>
         

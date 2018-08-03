@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119333037-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119333037-1');
+</script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Parity: Vos premiers pas avec Ethereum</title>
+
+    <meta name="description" content="Initiez vous avec les Dapps">
+
+    <!-- Google Authorship Markup -->
+    <link rel="author" href="https://plus.google.com/ChihebNeXuss?rel=author">
+
+    <!-- Social Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Chiheb_NeXus">
+    <meta name="twitter:title" content="Parity: Vos premiers pas avec Ethereum">
+    <meta name="twitter:description" content="Initiez vous avec les Dapps">
+
+    
+    <meta property="twitter:image:src" content="https://chiheb-nexus.github.iohttps://www.bleepstatic.com/content/posts/2017/11/07/Parity-Wallet-Logo.png">
+    
+
+    <!-- Social Facebook/Open Graph -->
+    <meta property="og:url" content="https://chiheb-nexus.github.io/vos-premiers-pas-avec-ethereum/">
+    <meta property="og:title" content="Parity: Vos premiers pas avec Ethereum">
+    
+    <meta property="og:image" content="https://chiheb-nexus.github.iohttps://www.bleepstatic.com/content/posts/2017/11/07/Parity-Wallet-Logo.png">
+    
+    <meta property="og:description" content="Initiez vous avec les Dapps">
+    <meta property="og:site_name" content="Nexus Coding | Pour un monde meilleur !">
+
+    <!-- Social Google+/Schema.org  -->
+    <meta itemprop="name" content="Parity: Vos premiers pas avec Ethereum"/>
+    <meta itemprop="description" content="Initiez vous avec les Dapps">
+    <meta itemprop="image" content="https://chiheb-nexus.github.io/assets/img/blog-image.png"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/assets/img/icons/favicon.ico" type="image/x-icon" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-touch-icon-152x152.png" />
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="~/λ/ Blog">
+    <meta name="msapplication-TileColor" content="#5d4d7a">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="#5d4d7a">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://chiheb-nexus.github.io/vos-premiers-pas-avec-ethereum/">
+    <link rel="alternate" type="application/rss+xml" title="Nexus Coding | Pour un monde meilleur !" href="https://chiheb-nexus.github.io/feed.xml" />
+    <!-- add main.js -->
+    <script src="https://raw.githubusercontent.com/Chiheb-Nexus/chiheb-nexus.github.io/master/assets/js/main.js" type="application/javascript"></script>
+</head>
+
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-email" viewBox="0 0 1024 1024"><path class="path1" d="M950.857 859.429v-438.857q-18.286 20.571-39.429 37.714-153.143 117.714-243.429 193.143-29.143 24.571-47.429 38.286t-49.429 27.714-58.571 14h-1.143q-27.429 0-58.571-14t-49.429-27.714-47.429-38.286q-90.286-75.429-243.429-193.143-21.143-17.143-39.429-37.714v438.857q0 7.429 5.429 12.857t12.857 5.429h841.143q7.429 0 12.857-5.429t5.429-12.857zM950.857 258.857v-14t-0.286-7.429-1.714-7.143-3.143-5.143-5.143-4.286-8-1.429h-841.143q-7.429 0-12.857 5.429t-5.429 12.857q0 96 84 162.286 110.286 86.857 229.143 181.143 3.429 2.857 20 16.857t26.286 21.429 25.429 18 28.857 15.714 24.571 5.143h1.143q11.429 0 24.571-5.143t28.857-15.714 25.429-18 26.286-21.429 20-16.857q118.857-94.286 229.143-181.143 30.857-24.571 57.429-66t26.571-75.143zM1024 237.714v621.714q0 37.714-26.857 64.571t-64.571 26.857h-841.143q-37.714 0-64.571-26.857t-26.857-64.571v-621.714q0-37.714 26.857-64.571t64.571-26.857h841.143q37.714 0 64.571 26.857t26.857 64.571z"/></symbol><symbol id="icon-close" viewBox="0 0 805 1024"><path class="path1" d="M741.714 755.429q0 22.857-16 38.857l-77.714 77.714q-16 16-38.857 16t-38.857-16l-168-168-168 168q-16 16-38.857 16t-38.857-16l-77.714-77.714q-16-16-16-38.857t16-38.857l168-168-168-168q-16-16-16-38.857t16-38.857l77.714-77.714q16-16 38.857-16t38.857 16l168 168 168-168q16-16 38.857-16t38.857 16l77.714 77.714q16 16 16 38.857t-16 38.857l-168 168 168 168q16 16 16 38.857z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-rss" viewBox="0 0 805 1024"><path class="path1" d="M219.429 768q0 45.714-32 77.714t-77.714 32-77.714-32-32-77.714 32-77.714 77.714-32 77.714 32 32 77.714zM512 838.286q1.143 16-9.714 27.429-10.286 12-26.857 12h-77.143q-14.286 0-24.571-9.429t-11.429-23.714q-12.571-130.857-105.429-223.714t-223.714-105.429q-14.286-1.143-23.714-11.429t-9.429-24.571v-77.143q0-16.571 12-26.857 9.714-9.714 24.571-9.714h2.857q91.429 7.429 174.857 46t148 103.714q65.143 64.571 103.714 148t46 174.857zM804.571 839.429q1.143 15.429-10.286 26.857-10.286 11.429-26.286 11.429h-81.714q-14.857 0-25.429-10t-11.143-24.286q-6.857-122.857-57.714-233.429t-132.286-192-192-132.286-233.429-58.286q-14.286-0.571-24.286-11.143t-10-24.857v-81.714q0-16 11.429-26.286 10.286-10.286 25.143-10.286h1.714q149.714 7.429 286.571 68.571t243.143 168q106.857 106.286 168 243.143t68.571 286.571z"/></symbol><symbol id="icon-google-plus" viewBox="0 0 951 1024"><path class="path1" d="M420 454.857q0 20.571 18.286 40.286t44.286 38.857 51.714 42 44 59.429 18.286 81.143q0 51.429-27.429 98.857-41.143 69.714-120.571 102.571t-170.286 32.857q-75.429 0-140.857-23.714t-98-78.571q-21.143-34.286-21.143-74.857 0-46.286 25.429-85.714t67.714-65.714q74.857-46.857 230.857-57.143-18.286-24-27.143-42.286t-8.857-41.714q0-20.571 12-48.571-26.286 2.286-38.857 2.286-84.571 0-142.571-55.143t-58-139.714q0-46.857 20.571-90.857t56.571-74.857q44-37.714 104.286-56t124.286-18.286h238.857l-78.857 50.286h-74.857q42.286 36 64 76t21.714 91.429q0 41.143-14 74t-33.714 53.143-39.714 37.143-34 35.143-14 37.714zM336.571 400q21.714 0 44.571-9.429t37.714-24.857q30.286-32.571 30.286-90.857 0-33.143-9.714-71.429t-27.714-74-48.286-59.143-66.857-23.429q-24 0-47.143 11.143t-37.429 30q-26.857 33.714-26.857 91.429 0 26.286 5.714 55.714t18 58.857 29.714 52.857 42.857 38.286 55.143 14.857zM337.714 898.857q33.143 0 63.714-7.429t56.571-22.286 41.714-41.714 15.714-62.286q0-14.286-4-28t-8.286-24-15.429-23.714-16.857-20-22-19.714-20.857-16.571-23.714-17.143-20.857-14.857q-9.143-1.143-27.429-1.143-30.286 0-60 4t-61.429 14.286-55.429 26.286-39.143 42.571-15.429 60.286q0 40 20 70.571t52.286 47.429 68 25.143 72.857 8.286zM800.571 398.286h121.714v61.714h-121.714v125.143h-60v-125.143h-121.143v-61.714h121.143v-124h60v124z"/></symbol><symbol id="icon-github-alt" viewBox="0 0 951 1024"><path class="path1" d="M365.714 694.857q0 22.857-7.143 46.857t-24.571 43.429-41.429 19.429-41.429-19.429-24.571-43.429-7.143-46.857 7.143-46.857 24.571-43.429 41.429-19.429 41.429 19.429 24.571 43.429 7.143 46.857zM731.429 694.857q0 22.857-7.143 46.857t-24.571 43.429-41.429 19.429-41.429-19.429-24.571-43.429-7.143-46.857 7.143-46.857 24.571-43.429 41.429-19.429 41.429 19.429 24.571 43.429 7.143 46.857zM822.857 694.857q0-68.571-39.429-116.571t-106.857-48q-23.429 0-111.429 12-40.571 6.286-89.714 6.286t-89.714-6.286q-86.857-12-111.429-12-67.429 0-106.857 48t-39.429 116.571q0 50.286 18.286 87.714t46.286 58.857 69.714 34.286 80 16.857 85.143 4h96q46.857 0 85.143-4t80-16.857 69.714-34.286 46.286-58.857 18.286-87.714zM950.857 594.286q0 118.286-34.857 189.143-21.714 44-60.286 76t-80.571 49.143-97.143 27.143-98 12.571-95.429 2.571q-44.571 0-81.143-1.714t-84.286-7.143-87.143-17.143-78.286-29.429-69.143-46.286-49.143-65.714q-35.429-70.286-35.429-189.143 0-135.429 77.714-226.286-15.429-46.857-15.429-97.143 0-66.286 29.143-124.571 61.714 0 108.571 22.571t108 70.571q84-20 176.571-20 84.571 0 160 18.286 60-46.857 106.857-69.143t108-22.286q29.143 58.286 29.143 124.571 0 49.714-15.429 96 77.714 91.429 77.714 227.429z"/></symbol><symbol id="icon-right-arrow"><path d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z" fill="#489472"/></symbol><symbol id="icon-linkedin" viewBox="0 0 12 14"><path class="path1" d="M1.852 11.047h1.805v-5.422h-1.805v5.422zM3.773 3.953q-0.008-0.406-0.281-0.672t-0.727-0.266-0.738 0.266-0.285 0.672q0 0.398 0.277 0.668t0.723 0.27h0.008q0.461 0 0.742-0.27t0.281-0.668zM8.344 11.047h1.805v-3.109q0-1.203-0.57-1.82t-1.508-0.617q-1.062 0-1.633 0.914h0.016v-0.789h-1.805q0.023 0.516 0 5.422h1.805v-3.031q0-0.297 0.055-0.438 0.117-0.273 0.352-0.465t0.578-0.191q0.906 0 0.906 1.227v2.898zM12 3.25v7.5q0 0.93-0.66 1.59t-1.59 0.66h-7.5q-0.93 0-1.59-0.66t-0.66-1.59v-7.5q0-0.93 0.66-1.59t1.59-0.66h7.5q0.93 0 1.59 0.66t0.66 1.59z"></path></symbol></defs></svg>
+
+        <header class="header-post">
+   	<p>λ</p>
+    <div class="search-wrapper">
+
+    <div class="search-form">
+        <input arial-label="Search for a post" type="text" class="search-field" placeholder="Search...">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+
+        <ul class="search-results search-list"></ul>
+    </div>
+
+</div>
+
+<!-- Menu Open -> Fade effect -->
+<div id="fade" class="overlay"></div>
+<a id="slide" class="slideButton fade">
+    <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    <svg id="close" class="icon-menu"><use xlink:href="#icon-close"></use></svg>
+</a>
+
+<aside id="sidebar">
+  <div id="topmenu">
+    
+    <ul>
+      <li><span>1</span></li>
+      <li><span> /vos-premiers-pas-avec-ethereum/</span></li>
+      <li><span>⌘ blogspace λ </span></li>
+      <li><span>* Menu</span></li>
+    </ul>
+
+    <ul>
+      <li><span>utf-8</span></li>
+      <li><span>web</span></li>
+      <li><span>.html</span></li>
+    </ul>
+  </div>
+
+  <nav id="navigation" role="navigation">
+    
+      <ul>
+      
+        
+            <li>
+                <span class="counter-menu">1</span>
+                <svg viewBox="0 0 50 50" class="icon-arrow-menu">
+                    <use xlink:href="#icon-right-arrow"></use>
+                </svg>
+                <a key-trigger=1
+                    href="https://chiheb-nexus.github.io/"> Acceuil</a>
+            </li>
+        
+      
+        
+            <li>
+                <span class="counter-menu">2</span>
+                <svg viewBox="0 0 50 50" class="icon-arrow-menu">
+                    <use xlink:href="#icon-right-arrow"></use>
+                </svg>
+                <a key-trigger=2
+                    href="https://chiheb-nexus.github.io/posts"> Articles</a>
+            </li>
+        
+      
+        
+            <li>
+                <span class="counter-menu">3</span>
+                <svg viewBox="0 0 50 50" class="icon-arrow-menu">
+                    <use xlink:href="#icon-right-arrow"></use>
+                </svg>
+                <a key-trigger=3
+                    href="https://chiheb-nexus.github.io/tags"> tags</a>
+            </li>
+        
+      
+        
+            <li>
+                <span class="counter-menu">4</span>
+                <svg viewBox="0 0 50 50" class="icon-arrow-menu">
+                    <use xlink:href="#icon-right-arrow"></use>
+                </svg>
+                <a key-trigger=4
+                    href="https://chiheb-nexus.github.io/about"> À propos</a>
+            </li>
+        
+      
+        <li>
+        <span class="counter-menu">5</span>
+                <svg viewBox="0 0 50 50" class="icon-arrow-menu">
+                    <use xlink:href="#icon-right-arrow"></use>
+                </svg>
+                <a href="https://chiheb-nexus.github.io/project-euler/"> Project Euler solutions</a>
+        </li>
+      </ul>
+    
+  </nav>
+</aside>
+
+<a id="search" class="dosearch">
+    <svg class="icon-menu icon-search"><use xlink:href="#icon-search"></use></svg>
+</a>
+
+</header>
+
+        <div class="tree-posts">
+
+    <h3>Articles</h3>
+
+    
+
+    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <div class="content">
+            <a title="Open the post" href="/ethereumpoa/">
+                <h2 class="post-title" itemprop="name">Ethereum-POA-en-utilisant-Geth.md</h2>
+            </a>
+        </div>
+    </article>
+
+    
+
+    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <div class="content">
+            <a title="Open the post" href="/ethereumrlp/">
+                <h2 class="post-title" itemprop="name">Ethereum-RLP:-Explication.md</h2>
+            </a>
+        </div>
+    </article>
+
+    
+
+    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <div class="content">
+            <a title="Open the post" href="/smartcontract/">
+                <h2 class="post-title" itemprop="name">Ethereum-Smart-Contract.md</h2>
+            </a>
+        </div>
+    </article>
+
+    
+
+    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <div class="content">
+            <a title="Open the post" href="/btcaddress/">
+                <h2 class="post-title" itemprop="name">Génération-des-adresses-Bitcoin.md</h2>
+            </a>
+        </div>
+    </article>
+
+    
+
+    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <div class="content">
+            <a title="Open the post" href="/vos-premiers-pas-avec-ethereum/">
+                <h2 class="post-title" itemprop="name">Parity:-Vos-premiers-pas-avec-Ethereum.md</h2>
+            </a>
+        </div>
+    </article>
+
+    
+
+    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <div class="content">
+            <a title="Open the post" href="/initiez-vous-avec-les-dapps/">
+                <h2 class="post-title" itemprop="name">Initiez-vous-avec-les-Dapps-d'Ethereum.md</h2>
+            </a>
+        </div>
+    </article>
+
+    
+
+</div>
+
+        <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
+            
+                <div class="time">
+                    <time itemprop="datePublished" datetime="2018-01-30 21:46:31 +0100">30 Jan 2018</time>
+                </div>
+            
+            <h1 class="post-title" itemprop="name">Parity: Vos premiers pas avec Ethereum</h1>
+
+            <article role="article" id="scroll" class="post-content" itemprop="articleBody">
+                <h3 id="introduction">Introduction</h3>
+
+<p><a href="https://www.parity.io/">Parity</a> est un client fiable et performant,permettant de se connecter au réseau Ethereum  sous licence GPLv3.
+Parity, par défaut, permet un accès rapide à un portefeuille d’Ethereum type Parity Wallet.
+L’outil permet de:</p>
+
+<ul>
+  <li>Créer et gérer les comptes Ethereum</li>
+  <li>Gérer les ethers et les jetons Ethereum</li>
+  <li>Créer et enregistrer les jetons</li>
+  <li>Créer, déployer et interagir avec les smarts contracts</li>
+  <li>etc.</li>
+</ul>
+
+<p>Par défaut, Parity démarre un serveur JSONRPC sur <code class="highlighter-rouge">127.0.0.1:8545</code> et un serveur de websockets sur <code class="highlighter-rouge">127.0.0.1:8546</code> (ceci est configurable) et supporte plusieurs autres type d’APIs.</p>
+
+<h3 id="installation">Installation:</h3>
+
+<p>Il suffit d’aller sur <a href="https://www.parity.io">https://www.parity.io</a> et télécharger le binaire suivant votre OS.</p>
+
+<p>Par exemple, si vous êtes sous une distribution basée sur Debian, c’est simple, téléchargez le binaire, ouvrez une terminale et lancez :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dpkg <span class="nt">-i</span> parity_1.8.7_amd64.deb 
+</code></pre></div></div>
+
+<p>Puis, assurez-vous que Parity a été bien installé, puis lancez :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>parity <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>Si vous vous êtes bien débrouillé, votre écran devrait vous montrer ça :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Parity
+  version Parity/v1.7.11-stable-a5ed4cf-20171228/x86_64-linux-gnu/rustc1.22.1
+Copyright 2015, 2016, 2017 Parity Technologies <span class="o">(</span>UK<span class="o">)</span> Ltd
+License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+ 
+By Wood/Paronyan/Kotewicz/Drwięga/Volf
+   Habermeier/Czaban/Greeff/Gotchac/Redmann
+</code></pre></div></div>
+
+<h3 id="déployer-un-smart-contract-avec-parity">Déployer un smart contract avec Parity:</h3>
+
+<p>Tout d’abord, on va lancer un noeud d’Ethereum, conçu spécialement pour les développeurs,qui par la suite va créer un noeud privé qui fonctionnera uniquement sur le <code class="highlighter-rouge">localhost</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>parity <span class="nt">--chain</span> dev 
+</code></pre></div></div>
+
+<p>Vous allez avoir un résultat similaire à celui-là :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2018-01-29 18:01:03  Starting Parity/v1.7.11-stable-a5ed4cf-20171228/x86_64-linux-gnu/rustc1.22.1
+2018-01-29 18:01:03  Keys path /home/user/.local/share/io.parity.ethereum/keys/DevelopmentChain
+2018-01-29 18:01:03  DB path /home/user/.local/share/io.parity.ethereum/chains/DevelopmentChain/db/125ccdc70e48df86
+2018-01-29 18:01:03  Path to dapps /home/user/.local/share/io.parity.ethereum/dapps
+2018-01-29 18:01:03  State DB configuration: fast
+2018-01-29 18:01:03  Operating mode: active
+2018-01-29 18:01:04  Configured <span class="k">for </span>DevelopmentChain using InstantSeal engine
+2018-01-29 18:01:10  Public node URL: enode://f1b0796184bba93b53675558a2954f39747d2279800d0e320c9f2b04e19075df573532d71fd5f76f86e3b7accbf17781ded7a1dca75f9611b624e18e4746ea3a@192.168.1.6:30303
+2018-01-29 18:01:41     0/25 peers   42 KiB chain 618 KiB db 0 bytes queue 448 bytes <span class="nb">sync  </span>RPC:  0 conn,  0 req/s,   0 µs
+2018-01-29 18:02:11     0/25 peers   42 KiB chain 618 KiB db 0 bytes queue 448 bytes <span class="nb">sync  </span>RPC:  0 conn,  0 req/s,   0 µs
+</code></pre></div></div>
+
+<p>Maintenant, ouvrez <code class="highlighter-rouge">http://127.0.0.1:8180</code>, vous allez entrer dans l’UI de Parity:</p>
+
+<p><img src="/assets/img/parity-ui.png" /></p>
+
+<p>Comme vous remarquez, vous avez un compte nommé <code class="highlighter-rouge">Development Account</code> qui a un très grand nombre d’ethers dédiés aux tests. Vous pouvez, bien sûr, ajouter plusieurs autres comptes d’Ethereum avec l’interface UI de parity.</p>
+
+<p>Maintenant, allons sur: <code class="highlighter-rouge">CONTRACTS -&gt; Develop</code>:</p>
+
+<p><img src="/assets/img/parity-develop.png" /></p>
+
+<p>Créons notre Smart Contract :</p>
+
+<p>example_contract.sol</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">pragma</span> <span class="nx">solidity</span> <span class="o">^</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
+
+<span class="cm">/* 
+	Un contract abstrait où on déclare les fonctions et les évènements à utiliser.
+	NB: Un contract abstrait ne peut pas etre compilé. Cependant ce type de contract
+		peuvent etre utilisé comme une base pour d'autre contracts
+*/</span>
+
+<span class="nx">contract</span> <span class="nx">AbstractContract</span> <span class="p">{</span>
+	<span class="cm">/*
+		LogUserGetToken: Un log dans la EVM quand un utiliseur reçoit ses tokens
+		LogUserTokenBalance: Un log dans le EVM qui permet de tracer le retour 
+						  de la fonction userTokenBalance
+		LogTransferToken: Un log dans la EVM qui permet le traçage de l'envoi 
+						  des tokens d'une addresse vers une autre
+		LogWithdrawEtherToOwner: Un log dans le EVM qui permet le traçage du withdraw
+						  vers l'addresse du propriétaire du contract
+
+		userTokenBalance: Permet de connaitre la balance en Token d'une addresse
+		transferToken: Permet le transfert des tokens d'une addresse à une autre
+		withdrawEtherToOwner: Permet de vider l'addresse du contract des ethers
+						  et les envoyer vers l'addresse du propriétaire du contract
+	*/</span>
+	<span class="nx">event</span> <span class="nx">LogUserGetToken</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_user</span><span class="p">,</span> <span class="nx">uint</span> <span class="nx">_amount</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">_tokenName</span><span class="p">);</span>
+	<span class="nx">event</span> <span class="nx">LogUserTokenBalance</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_user</span><span class="p">,</span> <span class="nx">uint</span> <span class="nx">_amount</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">_tokenName</span><span class="p">);</span>
+	<span class="nx">event</span> <span class="nx">LogTransferToken</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_from</span><span class="p">,</span> <span class="nx">address</span> <span class="nx">_to</span><span class="p">,</span> <span class="nx">uint</span> <span class="nx">_amount</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">_tokenName</span><span class="p">);</span>
+	<span class="nx">event</span> <span class="nx">LogWithdrawEtherToOwner</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_contractAdd</span><span class="p">,</span> <span class="nx">address</span> <span class="nx">_owner</span><span class="p">,</span> <span class="nx">uint</span> <span class="nx">_amount</span><span class="p">,</span> <span class="nx">string</span> <span class="nx">_tokenName</span><span class="p">);</span>
+	<span class="kd">function</span> <span class="nx">userTokenBalance</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_user</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint</span><span class="p">);</span>
+	<span class="kd">function</span> <span class="nx">transferToken</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_from</span><span class="p">,</span> <span class="nx">address</span> <span class="nx">_to</span><span class="p">,</span> <span class="nx">uint</span> <span class="nx">amount</span><span class="p">)</span> <span class="kr">public</span><span class="p">;</span>
+	<span class="kd">function</span> <span class="nx">withdrawEtherToOwner</span><span class="p">()</span> <span class="kr">public</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// MyTokenContract hérite les fonctions du contract AbstractContract</span>
+<span class="nx">contract</span> <span class="nx">MyTokenContract</span> <span class="nx">is</span> <span class="nx">AbstractContract</span> <span class="p">{</span>
+
+	<span class="c1">// address du propriétaire du contract</span>
+	<span class="nx">address</span> <span class="kr">public</span> <span class="nx">owner</span><span class="p">;</span>
+	<span class="c1">// Nom du jeton</span>
+	<span class="nx">string</span> <span class="kr">public</span> <span class="nx">tokenName</span><span class="p">;</span>
+	<span class="c1">// Le maximum des jetons qui peuvent etre générés</span>
+	<span class="c1">// en se basant à 18 décimals le maxSupply = 42 unités</span>
+	<span class="nx">uint</span> <span class="nx">constant</span> <span class="kr">public</span> <span class="nx">maxSupply</span> <span class="o">=</span> <span class="mi">42</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">18</span><span class="p">;</span>
+	<span class="c1">// Logger les jetons restants</span>
+	<span class="nx">uint</span> <span class="kr">public</span> <span class="nx">currentSupply</span><span class="p">;</span>
+	<span class="c1">// Un dictionnaire où on peut savoir la balance de chaque addresse avec ses jetons</span>
+	<span class="nx">mapping</span> <span class="p">(</span><span class="nx">address</span> <span class="o">=&gt;</span> <span class="nx">uint</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">balances</span><span class="p">;</span>
+
+	<span class="kd">function</span> <span class="nx">MyTokenContract</span><span class="p">()</span> <span class="kr">public</span> <span class="p">{</span>
+		<span class="c1">// Initialiser le contract</span>
+		<span class="c1">// Cette fonction sera exécutée une seule fois dans la vie du contract</span>
+		<span class="nx">currentSupply</span> <span class="o">=</span> <span class="nx">maxSupply</span><span class="p">;</span>
+		<span class="nx">tokenName</span> <span class="o">=</span> <span class="s1">'MyTokenERC20'</span><span class="p">;</span>
+		<span class="c1">// Le propriétaire du contract est celui qui le déploie</span>
+		<span class="c1">// msg.sender = address de celui qui a déployé le contract</span>
+		<span class="nx">owner</span> <span class="o">=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="c1">// Fallback</span>
+	<span class="c1">// Cette fonction est un "payable" c'est à dire elle accepte les dépots en ethers</span>
+	<span class="kd">function</span> <span class="p">()</span> <span class="kr">public</span> <span class="nx">payable</span> <span class="p">{</span>
+		<span class="c1">// 1 ether = 1 MyTokenERC20</span>
+		<span class="c1">// Et il faut pas que les ether reçus dépasse ce qui reste de jetons</span>
+		<span class="c1">// Car on va pas créer des nouveaux jetons dans ce smart contract</span>
+		<span class="nx">require</span><span class="p">(</span><span class="nx">currentSupply</span> <span class="o">&gt;=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+		<span class="nx">currentSupply</span> <span class="o">-=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+		<span class="c1">// Incrémenter la balance de celui qui a envoyé les ethers en jetons</span>
+		<span class="c1">// PS: si le key n'existe pas, il sera ajouté automatiquement</span>
+		<span class="c1">// et sa valeur par défaut sera égale à 0</span>
+		<span class="c1">// du coup on peut l'incrémenter sans causer aucune erreur</span>
+		<span class="c1">// dans le déroulement du contract</span>
+		<span class="nx">balances</span><span class="p">[</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+		<span class="c1">// Un log</span>
+		<span class="nx">LogUserGetToken</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span><span class="p">,</span> <span class="nx">msg</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="nx">tokenName</span><span class="p">);</span>
+
+	<span class="p">}</span>
+
+	<span class="kd">function</span> <span class="nx">userTokenBalance</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_user</span><span class="p">)</span> <span class="kr">public</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">uint</span> <span class="nx">balance</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">balance</span> <span class="o">=</span> <span class="nx">balances</span><span class="p">[</span><span class="nx">_user</span><span class="p">];</span>
+		<span class="nx">LogUserTokenBalance</span><span class="p">(</span><span class="nx">_user</span><span class="p">,</span> <span class="nx">balance</span><span class="p">,</span> <span class="nx">tokenName</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kd">function</span> <span class="nx">transferToken</span><span class="p">(</span><span class="nx">address</span> <span class="nx">_from</span><span class="p">,</span> <span class="nx">address</span> <span class="nx">_to</span><span class="p">,</span> <span class="nx">uint</span> <span class="nx">_amount</span><span class="p">)</span> <span class="kr">public</span> <span class="p">{</span>
+		<span class="c1">// Une addresse ne peut pas envoyer des tokens à elle meme</span>
+		<span class="nx">require</span><span class="p">(</span><span class="nx">_from</span> <span class="o">!=</span> <span class="nx">_to</span><span class="p">);</span>
+		<span class="c1">// La balance de celui qui va envoyer les jetons doit etre supérieure à _amount</span>
+		<span class="nx">require</span><span class="p">(</span><span class="nx">balances</span><span class="p">[</span><span class="nx">_from</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="nx">_amount</span><span class="p">);</span>
+		<span class="nx">balances</span><span class="p">[</span><span class="nx">_from</span><span class="p">]</span> <span class="o">-=</span> <span class="nx">_amount</span><span class="p">;</span>
+		<span class="nx">balances</span><span class="p">[</span><span class="nx">_to</span><span class="p">]</span> <span class="o">+=</span> <span class="nx">_amount</span><span class="p">;</span>
+		<span class="c1">// Un log</span>
+		<span class="nx">LogTransferToken</span><span class="p">(</span><span class="nx">_from</span><span class="p">,</span> <span class="nx">_to</span><span class="p">,</span> <span class="nx">_amount</span><span class="p">,</span> <span class="nx">tokenName</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="kd">function</span> <span class="nx">withdrawEtherToOwner</span><span class="p">()</span> <span class="kr">public</span> <span class="p">{</span>
+		<span class="c1">// Cette fonction doit etre exécuté uniquement par le propriétaire du contract</span>
+		<span class="nx">require</span><span class="p">(</span><span class="nx">msg</span><span class="p">.</span><span class="nx">sender</span> <span class="o">==</span> <span class="nx">owner</span><span class="p">);</span>
+		<span class="c1">// Calcul du GAS total de la transaction</span>
+		<span class="c1">// GAS utilisé est 21000</span>
+		<span class="kd">var</span> <span class="nx">gasConsumed</span> <span class="o">=</span> <span class="nx">tx</span><span class="p">.</span><span class="nx">gasprice</span> <span class="o">*</span> <span class="mi">21000</span><span class="p">;</span>
+		<span class="kd">var</span> <span class="nx">finalAmount</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">balance</span> <span class="o">-</span> <span class="nx">gasConsumed</span><span class="p">;</span>
+		<span class="c1">// Transférer les ethers du smart contract vers l'address du propriétaire</span>
+		<span class="nx">owner</span><span class="p">.</span><span class="nx">transfer</span><span class="p">(</span><span class="nx">finalAmount</span><span class="p">);</span>
+		<span class="nx">LogWithdrawEtherToOwner</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">owner</span><span class="p">,</span> <span class="nx">finalAmount</span><span class="p">,</span> <span class="s1">'ETH'</span><span class="p">);</span>
+
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Compilation et déploiement du Smart Contract:</p>
+
+<h3 id="compile">Compile:</h3>
+
+<p><img src="/assets/img/parity-success-deploy.png" /></p>
+
+<h3 id="deploy-choisissez-le-contrat-nommé-mytokencontract-avant-le-déployement">Deploy: (Choisissez le contrat nommé MyTokenContract avant le déployement)</h3>
+
+<p><img src="/assets/img/parity-deploy.png" /></p>
+
+<p><img src="/assets/img/parity-deploy-fees.png" /></p>
+
+<p><strong>PS:</strong> Comme vous le remarquez, Parity nous lance le GAS estimé pour cette transaction. On y reviendra sur la question des GAS dans les prochains tutoriels.</p>
+
+<p>Le contrat devra être déployé correctement à ce stade.</p>
+
+<p>Maintenant, envoyons quelques ethers à l’adresse de notre contrat comme suit:</p>
+
+<p><img src="/assets/img/parity-send-ethers.png" /></p>
+
+<p>Choisissez l’adresse du contrat de <code class="highlighter-rouge">MyERC20Token</code> et envoyez par exemple 15 ethers comme suit:</p>
+
+<p><img src="/assets/img/parity-send-ethers2.png" /></p>
+
+<p>Puis allons sur: <code class="highlighter-rouge">CONTRACTS</code> Voilà ce que ça devrait donner.</p>
+
+<p><img src="/assets/img/parity-smart-contract.png" /></p>
+
+<p>Comme vous voyez, notre smart contrat a maintenant 15 ethers comme balance.</p>
+
+<p><strong>NB:</strong> Il faut toujours que votre smart contrat ait suffisamment d’ethers pour le GAS(frais des transactions interne du smart contrat).</p>
+
+<p>En cliquant sur le smart contract on aura:</p>
+
+<p><img src="/assets/img/parity-contract-interface.png" /></p>
+
+<p>Et si on défile un peu la page on pourra voir:</p>
+
+<p><img src="/assets/img/parity-contract-interface2.png" /></p>
+
+<p>À ce stade, le statut des variables publiques de notre smart contract, les mappings, les listes et bien d’autres, s’affichent.</p>
+
+<p>Par exemple, <code class="highlighter-rouge">balances</code> , un mapping (dictionnaire), permet de faire des <code class="highlighter-rouge">queries</code> directement pour extraire les valeurs des clés entrées par celui qui va communiquer avec notre smart contract. À noter, balances est publique, toute personne voulant interagir avec notre contrat peut interagir avec notre <code class="highlighter-rouge">mapping balances</code>.</p>
+
+<p><img src="/assets/img/parity-contract-interface-query.png" /></p>
+
+<p>Vous trouvez la suite des fonctions écrites de notre smart contract , que vous pouvez interagir avec, ci-dessous :</p>
+
+<p><img src="/assets/img/parity-contract-interface3.png" /></p>
+
+<p>À ce niveau, on peut visualiser les événements en relation avec notre smart contract. Le log actuel est généré en interagissant avec la fonction <code class="highlighter-rouge">userGetToken</code> du contrat intelligent, on va y arriver dans un moment.</p>
+
+<p>Maintenant, essayons d’exécuter les fonctions du contrat:</p>
+
+<p><img src="/assets/img/parity-contract-interface-execute.png" />
+<img src="/assets/img/parity-contract-interface-execute2.png" /></p>
+
+<p>À ce stade, on peut visualiser les fonctions inscrites dans notre smart contract.</p>
+
+<p>Faisons la manipulation suivante et exécutons la fonction <code class="highlighter-rouge">userTokenBalance</code>:</p>
+
+<p><img src="/assets/img/parity-contract-interface-execute3.png" /></p>
+
+<p>La partie concernant les logs s’affiche ainsi :</p>
+
+<p><img src="/assets/img/parity-contract-interface-execute4.png" /></p>
+
+<p>Vidons l’adresse du smart contract de ses ethers et envoyons les au propriétaire du smart contract avec la fonction <code class="highlighter-rouge">withdrawEtherToOwner</code>:</p>
+
+<p><img src="/assets/img/parity-contract-interface-execute5.png" /></p>
+
+<p>Dans la partie log on aura :</p>
+
+<p><img src="/assets/img/parity-contract-interface-execute6.png" /></p>
+
+<p><img src="/assets/img/parity-contract-interface-execute7.png" /></p>
+
+<p>Donc, comme vous l’avez remarqué, <code class="highlighter-rouge">Parity</code> rend le développement des smart contracts et l’interaction avec eux assez facile même pour les plus débutants d’entre nous.</p>
+
+<p>Ceci dit, on aura souvent tendance à communiquer avec nos smart contracts en dehors de l’environnement du travail qu’offre Parity. Du coup, pour assurer cette universalité, on aura besoin de <code class="highlighter-rouge">web3.py</code> ou <code class="highlighter-rouge">web3.js</code>.</p>
+
+<h3 id="communication-avec-notre-smart-contract">Communication avec notre Smart Contract:</h3>
+
+<p>Dans cette démonstration, nous allons utiliser <code class="highlighter-rouge">web3.py</code>. Mais avant tout, on doit se prendre en considération que pour communiquer avec n’importe quel smart contract on doit avoir sous la main son ABI code et l’adresse du Smart contract .</p>
+
+<p>Pour trouver l’<code class="highlighter-rouge">ABI</code> code avec <code class="highlighter-rouge">Parity</code> on clique sur <code class="highlighter-rouge">DETAILS</code> comme suit:</p>
+
+<p><img src="/assets/img/Sélection_059.png" />
+<img src="/assets/img/Sélection_060.png" /></p>
+
+<p>Donc, en gros, notre <code class="highlighter-rouge">ABI</code> code est:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[{</span><span class="s2">"constant"</span>:true,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"balances"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"view"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"_user"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"userTokenBalance"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"balance"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"nonpayable"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:false,<span class="s2">"inputs"</span>:[],<span class="s2">"name"</span>:<span class="s2">"withdrawEtherToOwner"</span>,<span class="s2">"outputs"</span>:[],<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"nonpayable"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:true,<span class="s2">"inputs"</span>:[],<span class="s2">"name"</span>:<span class="s2">"tokenName"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"string"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"view"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:true,<span class="s2">"inputs"</span>:[],<span class="s2">"name"</span>:<span class="s2">"currentSupply"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"view"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:true,<span class="s2">"inputs"</span>:[],<span class="s2">"name"</span>:<span class="s2">"owner"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"view"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:true,<span class="s2">"inputs"</span>:[],<span class="s2">"name"</span>:<span class="s2">"maxSupply"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"view"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"_from"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"_to"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"_amount"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"transferToken"</span>,<span class="s2">"outputs"</span>:[],<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"nonpayable"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"inputs"</span>:[],<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"nonpayable"</span>,<span class="s2">"type"</span>:<span class="s2">"constructor"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"payable"</span>:true,<span class="s2">"stateMutability"</span>:<span class="s2">"payable"</span>,<span class="s2">"type"</span>:<span class="s2">"fallback"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"anonymous"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_user"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_amount"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_tokenName"</span>,<span class="s2">"type"</span>:<span class="s2">"string"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"LogUserGetToken"</span>,<span class="s2">"type"</span>:<span class="s2">"event"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"anonymous"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_user"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_amount"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_tokenName"</span>,<span class="s2">"type"</span>:<span class="s2">"string"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"LogUserTokenBalance"</span>,<span class="s2">"type"</span>:<span class="s2">"event"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"anonymous"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_from"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_to"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_amount"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_tokenName"</span>,<span class="s2">"type"</span>:<span class="s2">"string"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"LogTransferToken"</span>,<span class="s2">"type"</span>:<span class="s2">"event"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"anonymous"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_contractAdd"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_owner"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_amount"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_tokenName"</span>,<span class="s2">"type"</span>:<span class="s2">"string"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"LogWithdrawEtherToOwner"</span>,<span class="s2">"type"</span>:<span class="s2">"event"</span><span class="o">}]</span>
+</code></pre></div></div>
+
+<p>Supposons que l’adresse de notre contrat est: <code class="highlighter-rouge">0xb0b9b41F20298C5A5823F08Bac2c78935FEF6d80</code></p>
+
+<h3 id="interaction-avec-notre-smart-contract">Interaction avec notre Smart Contract:</h3>
+
+<p>On crée un fichier nommé: <code class="highlighter-rouge">contract_informations.json</code> où on met l’adresse de notre contract et son <code class="highlighter-rouge">ABI</code> code sous forme d’un fichier JSON (pensez à utiliser votre addresse du contract et votre code ABI):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">{</span><span class="s2">"contract_address"</span>: <span class="s2">"0xa6cDc48131D211a243aDb031Eb41543835Ed78a0"</span>, <span class="s2">"abi"</span>: <span class="o">[{</span><span class="s2">"constant"</span>:true,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"balances"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"view"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"_user"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"userTokenBalance"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"balance"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"nonpayable"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:false,<span class="s2">"inputs"</span>:[],<span class="s2">"name"</span>:<span class="s2">"withdrawEtherToOwner"</span>,<span class="s2">"outputs"</span>:[],<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"nonpayable"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:true,<span class="s2">"inputs"</span>:[],<span class="s2">"name"</span>:<span class="s2">"tokenName"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"string"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"view"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:true,<span class="s2">"inputs"</span>:[],<span class="s2">"name"</span>:<span class="s2">"currentSupply"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"view"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:true,<span class="s2">"inputs"</span>:[],<span class="s2">"name"</span>:<span class="s2">"owner"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"view"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:true,<span class="s2">"inputs"</span>:[],<span class="s2">"name"</span>:<span class="s2">"maxSupply"</span>,<span class="s2">"outputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">""</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}]</span>,<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"view"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"constant"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"_from"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"_to"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"name"</span>:<span class="s2">"_amount"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"transferToken"</span>,<span class="s2">"outputs"</span>:[],<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"nonpayable"</span>,<span class="s2">"type"</span>:<span class="s2">"function"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"inputs"</span>:[],<span class="s2">"payable"</span>:false,<span class="s2">"stateMutability"</span>:<span class="s2">"nonpayable"</span>,<span class="s2">"type"</span>:<span class="s2">"constructor"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"payable"</span>:true,<span class="s2">"stateMutability"</span>:<span class="s2">"payable"</span>,<span class="s2">"type"</span>:<span class="s2">"fallback"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"anonymous"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_user"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_amount"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_tokenName"</span>,<span class="s2">"type"</span>:<span class="s2">"string"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"LogUserGetToken"</span>,<span class="s2">"type"</span>:<span class="s2">"event"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"anonymous"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_user"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_amount"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_tokenName"</span>,<span class="s2">"type"</span>:<span class="s2">"string"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"LogUserTokenBalance"</span>,<span class="s2">"type"</span>:<span class="s2">"event"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"anonymous"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_from"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_to"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_amount"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_tokenName"</span>,<span class="s2">"type"</span>:<span class="s2">"string"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"LogTransferToken"</span>,<span class="s2">"type"</span>:<span class="s2">"event"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"anonymous"</span>:false,<span class="s2">"inputs"</span>:[<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_contractAdd"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_owner"</span>,<span class="s2">"type"</span>:<span class="s2">"address"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_amount"</span>,<span class="s2">"type"</span>:<span class="s2">"uint256"</span><span class="o">}</span>,<span class="o">{</span><span class="s2">"indexed"</span>:false,<span class="s2">"name"</span>:<span class="s2">"_tokenName"</span>,<span class="s2">"type"</span>:<span class="s2">"string"</span><span class="o">}]</span>,<span class="s2">"name"</span>:<span class="s2">"LogWithdrawEtherToOwner"</span>,<span class="s2">"type"</span>:<span class="s2">"event"</span><span class="o">}]}</span>
+</code></pre></div></div>
+
+<p>Ensuite, on envoie quelques ethers à l’adresse de notre smart contract et on lance la simulation:</p>
+
+<p>Le code Python et web3.py qui va communiquer avec le smart contract.</p>
+
+<p><strong>interaction_with_contract.py</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">web3</span> <span class="kn">import</span> <span class="n">Web3</span><span class="p">,</span> <span class="n">RPCProvider</span>
+<span class="kn">from</span> <span class="nn">web3.contract</span> <span class="kn">import</span> <span class="n">ConciseContract</span>
+
+<span class="n">RPC_IP</span> <span class="o">=</span> <span class="s">'127.0.0.1'</span>
+<span class="n">RPC_PORT</span> <span class="o">=</span> <span class="s">'8545'</span>
+
+<span class="c"># read the contract informations then convert them into a Python dict</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'contract_informations.json'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+	<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="n">ABI</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'abi'</span><span class="p">)</span>
+<span class="n">CONTARCT_ADDRESS</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'contract_address'</span><span class="p">)</span>
+
+<span class="n">w3</span> <span class="o">=</span> <span class="n">Web3</span><span class="p">(</span><span class="n">RPCProvider</span><span class="p">(</span><span class="n">RPC_IP</span><span class="p">,</span> <span class="n">RPC_PORT</span><span class="p">))</span>
+
+<span class="c"># Read the contract in ConciseContract mode which is a Read only access</span>
+<span class="n">contract_instance</span> <span class="o">=</span> <span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">contract</span><span class="p">(</span><span class="n">ABI</span><span class="p">,</span> <span class="n">CONTARCT_ADDRESS</span><span class="p">,</span> <span class="n">ContractFactoryClass</span><span class="o">=</span><span class="n">ConciseContract</span><span class="p">)</span>
+<span class="n">addresses</span> <span class="o">=</span> <span class="p">[</span><span class="s">'0x00a329c0648769A73afAc7F9381E08FB43dBEA72'</span><span class="p">,</span> <span class="s">'0x00F2b2abFD149fe48F6f051D8AD99b8A100AeE58'</span><span class="p">]</span>
+
+<span class="c"># Check smart contract balance in ethers</span>
+<span class="n">smart_contract_balance</span> <span class="o">=</span> <span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getBalance</span><span class="p">(</span><span class="n">CONTARCT_ADDRESS</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Balance of the smart contract ({0}) : {1} ethers'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">CONTARCT_ADDRESS</span><span class="p">,</span> <span class="n">smart_contract_balance</span><span class="p">))</span>
+
+<span class="c"># Check balances</span>
+<span class="k">for</span> <span class="n">addr</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
+	<span class="n">balance</span> <span class="o">=</span> <span class="n">contract_instance</span><span class="o">.</span><span class="n">userTokenBalance</span><span class="p">(</span><span class="n">addr</span><span class="p">)</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">'Balance of {0} = {1} (10 ** 18 unités)'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">balance</span><span class="p">))</span>
+	
+<span class="c"># Send token from 0x00a329c0648769A73afAc7F9381E08FB43dBEA72 to 0x00F2b2abFD149fe48F6f051D8AD99b8A100AeE58</span>
+<span class="c"># PS: Vous devez confirmer la transaction dans l'interface de Parity !!!</span>
+<span class="n">tx_hash</span> <span class="o">=</span> <span class="n">contract_instance</span><span class="o">.</span><span class="n">transferToken</span><span class="p">(</span><span class="n">addresses</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">addresses</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">18</span><span class="p">,</span> <span class="n">transact</span><span class="o">=</span><span class="p">{</span><span class="s">'from'</span><span class="p">:</span> <span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">accounts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">'gasPrice'</span><span class="p">:</span> <span class="mi">21000</span><span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tx_hash</span><span class="p">)</span>
+
+<span class="c"># Check balances</span>
+<span class="k">for</span> <span class="n">addr</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">:</span>
+	<span class="n">balance</span><span class="o">=</span> <span class="n">contract_instance</span><span class="o">.</span><span class="n">userTokenBalance</span><span class="p">(</span><span class="n">addr</span><span class="p">)</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">'Balance of {0} = {1} (10 ** 18 unités)'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">balance</span><span class="p">))</span>
+	
+<span class="c"># Withdraw all ethers to owner</span>
+<span class="c"># Vous devez Confirmer la transaction dans l'interface de Parity !!</span>
+<span class="n">tx_hash</span> <span class="o">=</span> <span class="n">contract_instance</span><span class="o">.</span><span class="n">withdrawEtherToOwner</span><span class="p">(</span><span class="n">transact</span><span class="o">=</span><span class="p">{</span><span class="s">'from'</span><span class="p">:</span> <span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">accounts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">'gasPrice'</span><span class="p">:</span> <span class="mi">21000</span><span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tx_hash</span><span class="p">)</span>
+
+<span class="c"># Check smart contract balance in ethers</span>
+<span class="n">smart_contract_balance</span> <span class="o">=</span> <span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getBalance</span><span class="p">(</span><span class="n">CONTARCT_ADDRESS</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Balance of the smart contract ({0}) : {1} ethers'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">CONTARCT_ADDRESS</span><span class="p">,</span> <span class="n">smart_contract_balance</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Donc, il suffit de lancer Parity avec:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>parity <span class="nt">--chain</span> dev 
+</code></pre></div></div>
+
+<p>Et ensuite:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python interaction_with_contract.py 
+</code></pre></div></div>
+
+<p>Vous aurez un résultat similaire à ceci:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Balance of the smart contract <span class="o">(</span>0xa6cDc48131D211a243aDb031Eb41543835Ed78a0<span class="o">)</span> : 3000000000000000000 ethers
+Balance of 0x00a329c0648769A73afAc7F9381E08FB43dBEA72 <span class="o">=</span> 3000000000000000000 <span class="o">(</span>10 <span class="k">**</span> 18 unités<span class="o">)</span>
+Balance of 0x00F2b2abFD149fe48F6f051D8AD99b8A100AeE58 <span class="o">=</span> 0 <span class="o">(</span>10 <span class="k">**</span> 18 unités<span class="o">)</span>
+0xe68f095f4119042f4c770694e156faceba45f061a6122b818a4965f2ebc4369b
+Balance of 0x00a329c0648769A73afAc7F9381E08FB43dBEA72 <span class="o">=</span> 2000000000000000000 <span class="o">(</span>10 <span class="k">**</span> 18 unités<span class="o">)</span>
+Balance of 0x00F2b2abFD149fe48F6f051D8AD99b8A100AeE58 <span class="o">=</span> 1000000000000000000 <span class="o">(</span>10 <span class="k">**</span> 18 unités<span class="o">)</span>
+0x1268e373a02e52050f35e98edee37f1f8c6b87ab33ed2fd2ae3055e333290333
+Balance of the smart contract <span class="o">(</span>0xa6cDc48131D211a243aDb031Eb41543835Ed78a0<span class="o">)</span> : 441000000 ethers
+</code></pre></div></div>
+
+<p><strong>PS:</strong> Vous devez confirmer les transactions sur Parity puisque nous allons modifier le statut des variables dans notre smart contract, c’est à dire on va payer des frais de transactions (GAS).</p>
+
+<p>Au plaisir de vous retrouver au prochain tutoriel!</p>
+
+            </article>
+
+            <section class="share">
+
+    <h3>Partager</h3>
+
+    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;&quot;%20https://chiheb-nexus.github.io/vos-premiers-pas-avec-ethereum/%20via%20&#64;Chiheb_NeXus&hashtags=ethereum,dapps,geth,parity,blockchain,"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+
+    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u=https://chiheb-nexus.github.io/vos-premiers-pas-avec-ethereum/"
+    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=https://chiheb-nexus.github.io/vos-premiers-pas-avec-ethereum/"
+    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+        <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
+    </a>
+
+</section>
+
+            <section class="comments">
+
+    <h3>Commentaires</h3>
+    <div id="disqus_thread"></div>
+
+</section>
+
+<script type="text/javascript">
+
+    var disqus_loaded = false;
+
+    function load_disqus(){
+        disqus_loaded = true;
+        var disqus_shortname = 'nexus-coding';
+        var disqus_title = '';
+        var disqus_url = '/vos-premiers-pas-avec-ethereum/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+            <footer>
+
+	<p>Chiheb Nexus - Copyleft  <span class="copyleft">&copy;</span> - 2018</p> 
+
+</footer>
+
+            <script src="/assets/js/main.js"></script>
+        </section>
+    </body>
+</html>

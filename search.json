@@ -33,11 +33,19 @@
     } ,
   
     {
+      "title"    : "Parity: Vos premiers pas avec Ethereum",
+      "category" : "ethereumblockchaindapps",
+      "tags"     : "ethereum, dapps, geth, parity, and blockchain",
+      "url"      : "/vos-premiers-pas-avec-ethereum/",
+      "date"     : "30 Jan 2018"
+    } ,
+  
+    {
       "title"    : "Initiez vous avec les Dapps d&#39;Ethereum",
       "category" : "ethereumblockchaindapps",
       "tags"     : "ethereum, dapps, geth, parity, and blockchain",
       "url"      : "/initiez-vous-avec-les-dapps/",
-      "date"     : "01 Jan 2018"
+      "date"     : "20 Jan 2018"
     } 
   
 ]
