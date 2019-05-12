@@ -5,13 +5,13 @@
     <description>Blog dédié à la technologie de la Blockchain et au développement informatique en général</description>
     <link>https://chiheb-nexus.github.io/</link>
     <atom:link href="https://chiheb-nexus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 May 2019 17:23:37 +0200</pubDate>
-    <lastBuildDate>Sun, 12 May 2019 17:23:37 +0200</lastBuildDate>
+    <pubDate>Sun, 12 May 2019 17:30:22 +0200</pubDate>
+    <lastBuildDate>Sun, 12 May 2019 17:30:22 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Comment utiliser Pandas avec Django ORM</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/python.png?1513021422&quot; /&gt;&lt;/p&gt; &lt;p&gt;Après presque une année d’absence pour des diverses raisons, je me suis dit qu’il est temps de retourner à mon blog et d’ajouter des nouveaux articles et surtout des tutoriels qu’on ne trouve pas facilement sur le net. Ceci dit, je vais vous parler aujourd’hui de comment faire pour utiliser Pandas et Django ORM pour aboutir aux memes résultats. Je tiens à noter qu’on va ignorer les points de différences et similitudes entre les deux outils et on va se concacrer uniquement, au moins dans ce tutoriel, à lire un document EXCEL (.XLSX), de remplir une base...</description>
+        <description>&lt;p&gt;&lt;img src=&quot;https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/python.png?1513021422&quot; /&gt;&lt;/p&gt; &lt;p&gt;Après presque une année d’absence pour des diverses raisons, je me suis dit qu’il est temps de retourner à mon blog et d’ajouter des nouveaux articles et surtout des tutoriels qu’on ne trouve pas facilement sur le net. Ceci dit, je vais vous parler aujourd’hui de comment faire pour utiliser Pandas et Django ORM pour aboutir aux memes résultats. Je tiens à noter qu’on va ignorer les points de différences et similitudes entre les deux outils et on va se consacrer uniquement, au moins dans ce tutoriel, à lire un document EXCEL (.XLSX), de remplir une base...</description>
         <pubDate>Fri, 10 May 2019 22:46:31 +0200</pubDate>
         <link>https://chiheb-nexus.github.io/django-orm-pandas/</link>
         <guid isPermaLink="true">https://chiheb-nexus.github.io/django-orm-pandas/</guid>
