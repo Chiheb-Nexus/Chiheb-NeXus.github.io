@@ -166,13 +166,6 @@
             </li>
         
       
-        <li>
-        <span class="counter-menu">5</span>
-                <svg viewBox="0 0 50 50" class="icon-arrow-menu">
-                    <use xlink:href="#icon-right-arrow"></use>
-                </svg>
-                <a href="https://chiheb-nexus.github.io/project-euler/"> Project Euler solutions</a>
-        </li>
       </ul>
     
   </nav>
@@ -187,6 +180,16 @@
         <div class="tree-posts">
 
     <h3>Articles</h3>
+
+    
+
+    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <div class="content">
+            <a title="Open the post" href="/django-orm-pandas/">
+                <h2 class="post-title" itemprop="name">Comment-utiliser-Pandas-avec-Django-ORM.md</h2>
+            </a>
+        </div>
+    </article>
 
     
 
@@ -230,32 +233,12 @@
 
     
 
-    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-        <div class="content">
-            <a title="Open the post" href="/vos-premiers-pas-avec-ethereum/">
-                <h2 class="post-title" itemprop="name">Parity:-Vos-premiers-pas-avec-Ethereum.md</h2>
-            </a>
-        </div>
-    </article>
-
-    
-
-    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-        <div class="content">
-            <a title="Open the post" href="/initiez-vous-avec-les-dapps/">
-                <h2 class="post-title" itemprop="name">Initiez-vous-avec-les-Dapps-d'Ethereum.md</h2>
-            </a>
-        </div>
-    </article>
-
-    
-
 </div>
 
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
             
                 <div class="time">
-                    <time itemprop="datePublished" datetime="2018-05-13 19:21:31 +0100">13 May 2018</time>
+                    <time itemprop="datePublished" datetime="2018-05-13 20:21:31 +0200">13 May 2018</time>
                 </div>
             
             <h1 class="post-title" itemprop="name">Ethereum Smart Contract</h1>
@@ -348,11 +331,11 @@ installing-solidity.html#binary-packages">Solidity Compiler: solc</a>
 
 <p><strong>compile_contract.py</strong>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Compile contract</span>
-<span class="c"># Author: Chiheb Nexus - 2018</span>
-<span class="c"># License: GPLv3</span>
-<span class="c">#</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Compile contract
+# Author: Chiheb Nexus - 2018
+# License: GPLv3
+#
+</span>
 
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">solc</span> <span class="kn">import</span> <span class="n">compile_source</span>
@@ -366,23 +349,23 @@ installing-solidity.html#binary-packages">Solidity Compiler: solc</a>
     <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="s">'''Lecture du fichier contenant le code source du Smart Contract'''</span>
         <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Lecture du fichier: {0}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_file</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Lecture du fichier: {0}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_file</span><span class="p">))</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_file</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-        <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Lecture terminée! du fichier: {0}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_file</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Lecture terminée! du fichier: {0}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path_file</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">data</span>
 
     <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="s">'''Écriture du output de la compilation du Smart contract'''</span>
         <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Écriture du contract compilé dans le fichier: {0}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Écriture du contract compilé dans le fichier: {0}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
 
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'&lt;stdin&gt;:{0}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contract_name</span><span class="p">)]))</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'&lt;stdin&gt;:{0}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contract_name</span><span class="p">)]))</span>
 
         <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Écriture terminée avec succès! dans le fichier: {0}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Écriture terminée avec succès! dans le fichier: {0}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
         
     <span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="s">'''Compiler le code du Smart Contract'''</span>
@@ -398,11 +381,11 @@ installing-solidity.html#binary-packages">Solidity Compiler: solc</a>
 
 <p><strong>interact_contract.py</strong>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Déploiement et interaction avec un Smart contract</span>
-<span class="c"># Author: Chiheb Nexus - 2018</span>
-<span class="c"># License: GPLv3</span>
-<span class="c">#</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Déploiement et interaction avec un Smart contract
+# Author: Chiheb Nexus - 2018
+# License: GPLv3
+#
+</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">web3</span> <span class="kn">import</span> <span class="n">Web3</span>
@@ -410,26 +393,26 @@ installing-solidity.html#binary-packages">Solidity Compiler: solc</a>
 <span class="k">class</span> <span class="nc">InteractWithContract</span><span class="p">:</span>
     <span class="s">'''Interaction avec un Smart Contract'''</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compiled_sol_path</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">public_key</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">private_key</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">provider</span><span class="p">):</span>
-        <span class="c"># Dans cet exemple on va utiliser infura.io comme provider</span>
-        <span class="c"># Et la communication avec infura peut se faire en utilisant le protocole HTTP</span>
-        <span class="c"># Ou WS (Web Socket)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">w3</span> <span class="o">=</span> <span class="n">Web3</span><span class="p">(</span><span class="n">Web3</span><span class="o">.</span><span class="n">HTTPProvider</span><span class="p">(</span><span class="n">provider</span><span class="p">))</span>
+        <span class="c1"># Dans cet exemple on va utiliser infura.io comme provider
+</span>        <span class="c1"># Et la communication avec infura peut se faire en utilisant le protocole HTTP
+</span>        <span class="c1"># Ou WS (Web Socket)
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">w3</span> <span class="o">=</span> <span class="n">Web3</span><span class="p">(</span><span class="n">Web3</span><span class="o">.</span><span class="n">HTTPProvider</span><span class="p">(</span><span class="n">provider</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">compiled</span> <span class="o">=</span> <span class="n">compiled_sol_path</span>
-        <span class="c"># ABI et le BIN du output compilé du Smart Contract</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ABI</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">BIN</span> <span class="o">=</span> <span class="s">''</span><span class="p">,</span> <span class="s">''</span>
-        <span class="c"># L'adresse publique et privée de celui qui va déployé et communiquer avec le Smart Contract</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pub</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">priv</span> <span class="o">=</span> <span class="n">public_key</span><span class="p">,</span> <span class="n">private_key</span>
+        <span class="c1"># ABI et le BIN du output compilé du Smart Contract
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">ABI</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">BIN</span> <span class="o">=</span> <span class="s">''</span><span class="p">,</span> <span class="s">''</span>
+        <span class="c1"># L'adresse publique et privée de celui qui va déployé et communiquer avec le Smart Contract
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">pub</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">priv</span> <span class="o">=</span> <span class="n">public_key</span><span class="p">,</span> <span class="n">private_key</span>
 
 
     <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="s">'''Lecture du ouput compilé et extraction de ABI et du BIN'''</span>
         <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Lecture du fichier: {0}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compiled</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Lecture du fichier: {0}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compiled</span><span class="p">))</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compiled</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span> <span class="c"># Conversion du JSON en Python dict</span>
-
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span> <span class="c1"># Conversion du JSON en Python dict
+</span>
         <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Lecture terminée du fichier: {0}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compiled</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Lecture terminée du fichier: {0}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compiled</span><span class="p">))</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">ABI</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'abi'</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">BIN</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'bin'</span><span class="p">)</span>
@@ -446,16 +429,16 @@ installing-solidity.html#binary-packages">Solidity Compiler: solc</a>
         <span class="n">instance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">contract</span><span class="p">(</span><span class="n">abi</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ABI</span><span class="p">,</span> <span class="n">bytecode</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">BIN</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
             <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Préparation de la transaction du déploiement ...'</span><span class="p">)</span>
-        <span class="c"># Hacky ... mais fonctionnel :D</span>
-        <span class="n">tx_data</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">constructor</span><span class="p">()</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'data_in_transaction'</span><span class="p">)</span>
+        <span class="c1"># Hacky ... mais fonctionnel :D
+</span>        <span class="n">tx_data</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">constructor</span><span class="p">()</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'data_in_transaction'</span><span class="p">)</span>
         <span class="n">transaction</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s">'from'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pub</span><span class="p">,</span> <span class="c"># Celui qui va envoyer la transaction</span>
-            <span class="s">'value'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c"># Combien d'ethers vont être envoyés durant la transaction</span>
-            <span class="s">'gas'</span><span class="p">:</span> <span class="mi">2000000</span><span class="p">,</span> <span class="c"># GAS ... J'essaie de le rendre dynamique ...</span>
-            <span class="s">'gasPrice'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">gasPrice</span><span class="p">,</span> <span class="c"># GAS price dynamique</span>
-            <span class="s">'nonce'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getTransactionCount</span><span class="p">(</span><span class="n">pub</span><span class="p">),</span> <span class="c"># Le nonce de l'adresse</span>
-            <span class="s">'data'</span><span class="p">:</span> <span class="n">tx_data</span> <span class="c"># Les données envoyées durant la transaction</span>
-        <span class="p">}</span>
+            <span class="s">'from'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pub</span><span class="p">,</span> <span class="c1"># Celui qui va envoyer la transaction
+</span>            <span class="s">'value'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1"># Combien d'ethers vont être envoyés durant la transaction
+</span>            <span class="s">'gas'</span><span class="p">:</span> <span class="mi">2000000</span><span class="p">,</span> <span class="c1"># GAS ... J'essaie de le rendre dynamique ...
+</span>            <span class="s">'gasPrice'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">gasPrice</span><span class="p">,</span> <span class="c1"># GAS price dynamique
+</span>            <span class="s">'nonce'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getTransactionCount</span><span class="p">(</span><span class="n">pub</span><span class="p">),</span> <span class="c1"># Le nonce de l'adresse
+</span>            <span class="s">'data'</span><span class="p">:</span> <span class="n">tx_data</span> <span class="c1"># Les données envoyées durant la transaction
+</span>        <span class="p">}</span>
         <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
             <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Signer la transaction avec la clé privée...'</span><span class="p">)</span>
 
@@ -467,28 +450,28 @@ installing-solidity.html#binary-packages">Solidity Compiler: solc</a>
         <span class="n">tx_hash</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">sendRawTransaction</span><span class="p">(</span><span class="n">signed</span><span class="o">.</span><span class="n">rawTransaction</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Transaction envoyée avec succès avec ce hash: {0}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tx_hash</span><span class="o">.</span><span class="nb">hex</span><span class="p">()))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Transaction envoyée avec succès avec ce hash: {0}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">tx_hash</span><span class="o">.</span><span class="nb">hex</span><span class="p">()))</span>
 
-        <span class="c"># Convertir le ByteArray en hexadécimal</span>
-        <span class="k">return</span> <span class="n">tx_hash</span><span class="o">.</span><span class="nb">hex</span><span class="p">()</span>
+        <span class="c1"># Convertir le ByteArray en hexadécimal
+</span>        <span class="k">return</span> <span class="n">tx_hash</span><span class="o">.</span><span class="nb">hex</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">wait_for_receipt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tx_hash</span><span class="p">,</span> <span class="n">contract</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
         <span class="s">'''Attendre au moins une confirmation de la transaction'''</span>
         <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Attente de la première confirmation de la transaction: {0}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tx_hash</span><span class="p">))</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Attente de la première confirmation de la transaction: {0}'</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span><span class="n">tx_hash</span><span class="p">))</span>
             <span class="k">print</span><span class="p">(</span><span class="s">'...'</span><span class="p">)</span>
         <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-            <span class="c"># Avoir les informations de la transaction</span>
-            <span class="c"># Y compris l'adresse du Smart Contract</span>
-            <span class="n">tx_receipt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getTransactionReceipt</span><span class="p">(</span><span class="n">tx_hash</span><span class="p">)</span>
+            <span class="c1"># Avoir les informations de la transaction
+</span>            <span class="c1"># Y compris l'adresse du Smart Contract
+</span>            <span class="n">tx_receipt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getTransactionReceipt</span><span class="p">(</span><span class="n">tx_hash</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">tx_receipt</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
                     <span class="k">print</span><span class="p">(</span><span class="s">'-&gt; Transaction confirmée!'</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">contract</span><span class="p">:</span>
-                    <span class="c"># Avoir l'adresse du Smart Contract</span>
-                    <span class="n">contract_address</span> <span class="o">=</span> <span class="n">tx_receipt</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'contractAddress'</span><span class="p">)</span>
+                    <span class="c1"># Avoir l'adresse du Smart Contract
+</span>                    <span class="n">contract_address</span> <span class="o">=</span> <span class="n">tx_receipt</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'contractAddress'</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
-                        <span class="k">print</span><span class="p">(</span><span class="s">"-&gt; Écriture de l'adresse du contract '{0} dans le fichier: {1}'"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="k">print</span><span class="p">(</span><span class="s">"-&gt; Écriture de l'adresse du contract '{0} dans le fichier: {1}'"</span><span class="o">.</span><span class="nb">format</span><span class="p">(</span>
                             <span class="n">contract_address</span><span class="p">,</span> <span class="s">'contract_address'</span><span class="p">)</span>
                         <span class="p">)</span>
 
@@ -501,49 +484,49 @@ installing-solidity.html#binary-packages">Solidity Compiler: solc</a>
                     <span class="k">return</span> <span class="n">contract_address</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">return</span> <span class="bp">None</span>
-            <span class="c"># Attendre 1 seconde puis tester si la transaction est confirmée ou non</span>
-            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1"># Attendre 1 seconde puis tester si la transaction est confirmée ou non
+</span>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">interact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contract_address</span><span class="p">,</span> <span class="n">abi</span><span class="p">,</span> <span class="n">new_msg</span><span class="o">=</span><span class="s">''</span><span class="p">):</span>
         <span class="s">'''Interaction avec le Smart Contract Greeter déployé'''</span>
-        <span class="c"># Création d'une instance du Smart Contract Greeter</span>
-        <span class="n">greeter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">contract</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="n">contract_address</span><span class="p">,</span> <span class="n">abi</span><span class="o">=</span><span class="n">abi</span><span class="p">)</span>
-        <span class="c"># Appel de la fonction greet() dans le Smart Contract déployé Greeter</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="n">greeter</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span><span class="o">.</span><span class="n">call</span><span class="p">()</span>
+        <span class="c1"># Création d'une instance du Smart Contract Greeter
+</span>        <span class="n">greeter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">contract</span><span class="p">(</span><span class="n">address</span><span class="o">=</span><span class="n">contract_address</span><span class="p">,</span> <span class="n">abi</span><span class="o">=</span><span class="n">abi</span><span class="p">)</span>
+        <span class="c1"># Appel de la fonction greet() dans le Smart Contract déployé Greeter
+</span>        <span class="n">msg</span> <span class="o">=</span> <span class="n">greeter</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span><span class="o">.</span><span class="n">call</span><span class="p">()</span>
         <span class="k">print</span><span class="p">(</span><span class="s">'Actual message: '</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">new_msg</span><span class="p">:</span>
-            <span class="c"># Appel de la fonction setGreeting(string _greeting) en ajoutant un argument</span>
-            <span class="c"># Cette fonction modifie l'état d'une variable dans le Smart contract</span>
-            <span class="c"># =&gt; Faut payer des frais de transaction de cette modification</span>
-            <span class="c"># ==&gt; Faut créer une transaction et la signer avec la clé privée</span>
-            <span class="c"># de celui qui va faire cette modification dans le Smart contract</span>
-            <span class="n">tx_data</span> <span class="o">=</span> <span class="n">greeter</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">setGreeting</span><span class="p">(</span><span class="n">new_msg</span><span class="p">)</span><span class="o">.</span><span class="n">buildTransaction</span><span class="p">({</span>
-                <span class="s">'gasPrice'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">gasPrice</span><span class="p">,</span> <span class="c"># GAS Price dynamique</span>
-                <span class="s">'nonce'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getTransactionCount</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pub</span><span class="p">),</span> <span class="c"># Le nonce de l'adresse</span>
-            <span class="p">})</span>
-            <span class="c"># Signer la transaction avec l'adresse privée</span>
-            <span class="n">signed_tx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">signTransaction</span><span class="p">(</span><span class="n">tx_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">priv</span><span class="p">)</span>
-            <span class="c"># Envoyer la transaction signée aux noeuds du provider</span>
-            <span class="n">tx_hash</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">sendRawTransaction</span><span class="p">(</span><span class="n">signed_tx</span><span class="o">.</span><span class="n">rawTransaction</span><span class="p">)</span>
-            <span class="c"># Attendre au moins une confirmation</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_receipt</span><span class="p">(</span><span class="n">tx_hash</span><span class="o">.</span><span class="nb">hex</span><span class="p">())</span>
-            <span class="c"># Appel de la fonction greet() dans le Smart Contract</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="n">greeter</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span><span class="o">.</span><span class="n">call</span><span class="p">()</span>
+            <span class="c1"># Appel de la fonction setGreeting(string _greeting) en ajoutant un argument
+</span>            <span class="c1"># Cette fonction modifie l'état d'une variable dans le Smart contract
+</span>            <span class="c1"># =&gt; Faut payer des frais de transaction de cette modification
+</span>            <span class="c1"># ==&gt; Faut créer une transaction et la signer avec la clé privée
+</span>            <span class="c1"># de celui qui va faire cette modification dans le Smart contract
+</span>            <span class="n">tx_data</span> <span class="o">=</span> <span class="n">greeter</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">setGreeting</span><span class="p">(</span><span class="n">new_msg</span><span class="p">)</span><span class="o">.</span><span class="n">buildTransaction</span><span class="p">({</span>
+                <span class="s">'gasPrice'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">gasPrice</span><span class="p">,</span> <span class="c1"># GAS Price dynamique
+</span>                <span class="s">'nonce'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getTransactionCount</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pub</span><span class="p">),</span> <span class="c1"># Le nonce de l'adresse
+</span>            <span class="p">})</span>
+            <span class="c1"># Signer la transaction avec l'adresse privée
+</span>            <span class="n">signed_tx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">signTransaction</span><span class="p">(</span><span class="n">tx_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">priv</span><span class="p">)</span>
+            <span class="c1"># Envoyer la transaction signée aux noeuds du provider
+</span>            <span class="n">tx_hash</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">sendRawTransaction</span><span class="p">(</span><span class="n">signed_tx</span><span class="o">.</span><span class="n">rawTransaction</span><span class="p">)</span>
+            <span class="c1"># Attendre au moins une confirmation
+</span>            <span class="bp">self</span><span class="o">.</span><span class="n">wait_for_receipt</span><span class="p">(</span><span class="n">tx_hash</span><span class="o">.</span><span class="nb">hex</span><span class="p">())</span>
+            <span class="c1"># Appel de la fonction greet() dans le Smart Contract
+</span>            <span class="n">msg</span> <span class="o">=</span> <span class="n">greeter</span><span class="o">.</span><span class="n">functions</span><span class="o">.</span><span class="n">greet</span><span class="p">()</span><span class="o">.</span><span class="n">call</span><span class="p">()</span>
             <span class="k">print</span><span class="p">(</span><span class="s">'New message: '</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>  
 </code></pre></div></div>
 
 <p><strong>test_compile.py</strong>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Tester la compilation d'un Smart contract</span>
-<span class="c"># Author: Chiheb Nexus - 2018</span>
-<span class="c"># License: GPLv3</span>
-<span class="c">#</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Tester la compilation d'un Smart contract
+# Author: Chiheb Nexus - 2018
+# License: GPLv3
+#
+</span>
 <span class="kn">from</span> <span class="nn">compile_contract</span> <span class="kn">import</span> <span class="n">CompileContract</span>
 
-<span class="n">path_file</span> <span class="o">=</span> <span class="s">'contract.sol'</span> <span class="c"># Le nom du fichier</span>
-<span class="n">contract_name</span> <span class="o">=</span> <span class="s">'Greeter'</span> <span class="c"># Le nom du contract</span>
-<span class="n">contract</span> <span class="o">=</span> <span class="n">CompileContract</span><span class="p">(</span><span class="n">path_file</span><span class="o">=</span><span class="n">path_file</span><span class="p">,</span> <span class="n">contract_name</span><span class="o">=</span><span class="n">contract_name</span><span class="p">)</span>
+<span class="n">path_file</span> <span class="o">=</span> <span class="s">'contract.sol'</span> <span class="c1"># Le nom du fichier
+</span><span class="n">contract_name</span> <span class="o">=</span> <span class="s">'Greeter'</span> <span class="c1"># Le nom du contract
+</span><span class="n">contract</span> <span class="o">=</span> <span class="n">CompileContract</span><span class="p">(</span><span class="n">path_file</span><span class="o">=</span><span class="n">path_file</span><span class="p">,</span> <span class="n">contract_name</span><span class="o">=</span><span class="n">contract_name</span><span class="p">)</span>
 <span class="n">contract</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -580,32 +563,32 @@ SWAP1 JUMP STOP LOG1 PUSH6 0x627A7A723058 KECCAK256 0x5e 0xe8 PC CALLVALUE DUP5 
 
 <p><strong>test_deploy.py</strong>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Tester la compilation d'un Smart contract</span>
-<span class="c"># Author: Chiheb Nexus - 2018</span>
-<span class="c"># License: GPLv3</span>
-<span class="c">#</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Tester la compilation d'un Smart contract
+# Author: Chiheb Nexus - 2018
+# License: GPLv3
+#
+</span>
 <span class="kn">from</span> <span class="nn">interact_contract</span> <span class="kn">import</span> <span class="n">InteractWithContract</span>
 
-<span class="c"># inscrivez-vous au site de infura.io </span>
-<span class="c"># et avoir une clé</span>
-<span class="n">provider</span> <span class="o">=</span> <span class="s">'https://ropsten.infura.io/YOUR_INFURA_KEY'</span>
-<span class="c"># adresse publique ethereum</span>
-<span class="n">pub</span> <span class="o">=</span> <span class="s">'YOUR_PUBLIC_ADDRESS'</span>
-<span class="c"># la clé privée de l'adresse publique</span>
-<span class="n">key</span> <span class="o">=</span> <span class="s">'YOUR_PRIVATE_ADDRESS'</span>
-<span class="c"># fichier contenant l'ouput de la compilation du Smart contract</span>
-<span class="n">compiled_contract_source</span> <span class="o">=</span> <span class="s">'compiled_contract'</span>
+<span class="c1"># inscrivez-vous au site de infura.io 
+# et avoir une clé
+</span><span class="n">provider</span> <span class="o">=</span> <span class="s">'https://ropsten.infura.io/YOUR_INFURA_KEY'</span>
+<span class="c1"># adresse publique ethereum
+</span><span class="n">pub</span> <span class="o">=</span> <span class="s">'YOUR_PUBLIC_ADDRESS'</span>
+<span class="c1"># la clé privée de l'adresse publique
+</span><span class="n">key</span> <span class="o">=</span> <span class="s">'YOUR_PRIVATE_ADDRESS'</span>
+<span class="c1"># fichier contenant l'ouput de la compilation du Smart contract
+</span><span class="n">compiled_contract_source</span> <span class="o">=</span> <span class="s">'compiled_contract'</span>
 <span class="n">instance</span> <span class="o">=</span> <span class="n">InteractWithContract</span><span class="p">(</span>
     <span class="n">compiled_sol_path</span><span class="o">=</span><span class="n">compiled_contract_source</span><span class="p">,</span> 
     <span class="n">public_key</span><span class="o">=</span><span class="n">pub</span><span class="p">,</span> 
     <span class="n">private_key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> 
     <span class="n">provider</span><span class="o">=</span><span class="n">provider</span>
 <span class="p">)</span>
-<span class="c"># déploiement du Smart Contract</span>
-<span class="n">tx_hash</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">deploy</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="c"># Attendre au moins une confirmation pour avoir l'adresse du Smart contract</span>
-<span class="n">contract_address</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">wait_for_receipt</span><span class="p">(</span><span class="n">tx_hash</span><span class="p">,</span> <span class="n">contract</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># déploiement du Smart Contract
+</span><span class="n">tx_hash</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">deploy</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># Attendre au moins une confirmation pour avoir l'adresse du Smart contract
+</span><span class="n">contract_address</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">wait_for_receipt</span><span class="p">(</span><span class="n">tx_hash</span><span class="p">,</span> <span class="n">contract</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Sur la terminale:</p>
@@ -632,20 +615,20 @@ SWAP1 JUMP STOP LOG1 PUSH6 0x627A7A723058 KECCAK256 0x5e 0xe8 PC CALLVALUE DUP5 
 
 <p><strong>test_interact.py</strong>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Tester la compilation d'un Smart contract</span>
-<span class="c"># Author: Chiheb Nexus - 2018</span>
-<span class="c"># License: GPLv3</span>
-<span class="c">#</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Tester la compilation d'un Smart contract
+# Author: Chiheb Nexus - 2018
+# License: GPLv3
+#
+</span>
 <span class="kn">from</span> <span class="nn">interact_contract</span> <span class="kn">import</span> <span class="n">InteractWithContract</span>
 
-<span class="c"># inscrivez-vous au site de infura.io </span>
-<span class="c"># et avoir une clé</span>
-<span class="n">provider</span> <span class="o">=</span> <span class="s">'https://ropsten.infura.io/YOUR_INFURA_KEY'</span>
-<span class="c"># adresse publique ethereum</span>
-<span class="n">pub</span> <span class="o">=</span> <span class="s">'YOUR_PUBLIC_ADDRESS'</span>
-<span class="c"># la clé privée de l'adresse publique</span>
-<span class="n">key</span> <span class="o">=</span> <span class="s">'YOUR_PRIVATE_ADDRESS''</span><span class="err">
+<span class="c1"># inscrivez-vous au site de infura.io 
+# et avoir une clé
+</span><span class="n">provider</span> <span class="o">=</span> <span class="s">'https://ropsten.infura.io/YOUR_INFURA_KEY'</span>
+<span class="c1"># adresse publique ethereum
+</span><span class="n">pub</span> <span class="o">=</span> <span class="s">'YOUR_PUBLIC_ADDRESS'</span>
+<span class="c1"># la clé privée de l'adresse publique
+</span><span class="n">key</span> <span class="o">=</span> <span class="s">'YOUR_PRIVATE_ADDRESS''</span><span class="err">
 </span><span class="s">compiled_contract_source = '</span><span class="n">compiled_contract</span><span class="s">'</span><span class="err">
 </span><span class="s">instance = InteractWithContract(</span><span class="err">
 </span><span class="s">    compiled_sol_path=compiled_contract_source, </span><span class="err">

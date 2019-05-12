@@ -5,14 +5,36 @@
     <description>Blog dédié à la technologie de la Blockchain et au développement informatique en général</description>
     <link>https://chiheb-nexus.github.io/</link>
     <atom:link href="https://chiheb-nexus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 03 Aug 2018 23:26:30 +0100</pubDate>
-    <lastBuildDate>Fri, 03 Aug 2018 23:26:30 +0100</lastBuildDate>
-    <generator>Jekyll v3.8.1</generator>
+    <pubDate>Sun, 12 May 2019 17:23:37 +0200</pubDate>
+    <lastBuildDate>Sun, 12 May 2019 17:23:37 +0200</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Comment utiliser Pandas avec Django ORM</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://community-cdn-digitalocean-com.global.ssl.fastly.net/assets/tutorials/images/large/python.png?1513021422&quot; /&gt;&lt;/p&gt; &lt;p&gt;Après presque une année d’absence pour des diverses raisons, je me suis dit qu’il est temps de retourner à mon blog et d’ajouter des nouveaux articles et surtout des tutoriels qu’on ne trouve pas facilement sur le net. Ceci dit, je vais vous parler aujourd’hui de comment faire pour utiliser Pandas et Django ORM pour aboutir aux memes résultats. Je tiens à noter qu’on va ignorer les points de différences et similitudes entre les deux outils et on va se concacrer uniquement, au moins dans ce tutoriel, à lire un document EXCEL (.XLSX), de remplir une base...</description>
+        <pubDate>Fri, 10 May 2019 22:46:31 +0200</pubDate>
+        <link>https://chiheb-nexus.github.io/django-orm-pandas/</link>
+        <guid isPermaLink="true">https://chiheb-nexus.github.io/django-orm-pandas/</guid>
+        
+        <category>python</category>
+        
+        <category>pandas</category>
+        
+        <category>django</category>
+        
+        <category>orm</category>
+        
+        
+        <category>django</category>
+        
+        <category>pandas</category>
+        
+      </item>
     
       <item>
         <title>Ethereum POA en utilisant Geth</title>
         <description>&lt;p&gt;&lt;img src=&quot;http://www.newsonjapan.com/images/article/oracles6.png&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;définition-du-consensus-proof-of-authority-poa-preuve-dautorité&quot;&gt;Définition du consensus Proof Of Authority (POA, Preuve d’autorité):&lt;/h2&gt; &lt;p&gt;Proof-of-authority (PoA) est un algorithme utilisé avec la technologie de blockchain qui fournit des transactions relativement rapides grâce à un mécanisme de consensus basé sur l’identité en tant que pieu (l’identité étant une preuve suffisante pour la validation des transactions).&lt;/p&gt; &lt;p&gt;Dans les réseaux basés sur le POA, les transactions et les blocs sont validés par des comptes approuvés, appelés validateurs. Les validateurs exécutent un logiciel leur permettant de mettre des transactions dans des blocs. Le processus est automatisé et n’exige pas que les validateurs surveillent constamment leurs...</description>
-        <pubDate>Mon, 28 May 2018 16:21:31 +0100</pubDate>
+        <pubDate>Mon, 28 May 2018 17:21:31 +0200</pubDate>
         <link>https://chiheb-nexus.github.io/ethereumpoa/</link>
         <guid isPermaLink="true">https://chiheb-nexus.github.io/ethereumpoa/</guid>
         
@@ -46,7 +68,7 @@
       <item>
         <title>Ethereum RLP: Explication</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/1600/1*-Q00GpGTphTOtBWPRu1e3g.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;Avant de continuer la lecture, je tiens à dire que cet article est une tentative d’explication du schéma d’encodage RLP, utilisé par Ethereum, d’une manière simple et concrète avec des exemples.&lt;/p&gt; &lt;p&gt;Ce qui va suivre, c’est une tentative d’explication de ce que j’ai pu comprendre de l’encodage RLP qu’Ethereum utilise. Et c’est à vous de chercher encore et de valider ou non ce que vous aller rencontrer tout le long de cet article.&lt;/p&gt; &lt;h2 id=&quot;définition&quot;&gt;Définition:&lt;/h2&gt; &lt;p&gt;Le schéma d’encodage RLP (Recursive Length Prefix) est un schéma de sérialisation d’objets spatialement efficace utilisé dans Ethereum.&lt;/p&gt; &lt;p&gt;La spécifité de ce...</description>
-        <pubDate>Mon, 21 May 2018 03:17:31 +0100</pubDate>
+        <pubDate>Mon, 21 May 2018 04:17:31 +0200</pubDate>
         <link>https://chiheb-nexus.github.io/ethereumrlp/</link>
         <guid isPermaLink="true">https://chiheb-nexus.github.io/ethereumrlp/</guid>
         
@@ -70,7 +92,7 @@
       <item>
         <title>Ethereum Smart Contract</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/0*PFwVdgw-2tqj8LZV.png&quot; /&gt;&lt;/p&gt; &lt;p&gt;Les contrats intelligents (en anglais Smart Contracts) sont des protocoles informatiques qui facilitent, vérifient et exécutent la négociation ou l’exécution d’un contrat, ou qui rendent une clause contractuelle inutile (car rattachée au contrat intelligent). Les contrats intelligents ont généralement une interface utilisateur et émulent la logique des clauses contractuelles.&lt;/p&gt; &lt;p&gt;Les partisans des contrats intelligents affirment que de nombreux types de clauses contractuelles peuvent ainsi être partiellement ou totalement auto-exécutées ou exécutées à la validation ou les deux.&lt;/p&gt; &lt;p&gt;Les contrats intelligents visent à assurer une sécurité supérieure à la mise en application de la loi sur les contrats...</description>
-        <pubDate>Sun, 13 May 2018 19:21:31 +0100</pubDate>
+        <pubDate>Sun, 13 May 2018 20:21:31 +0200</pubDate>
         <link>https://chiheb-nexus.github.io/smartcontract/</link>
         <guid isPermaLink="true">https://chiheb-nexus.github.io/smartcontract/</guid>
         
@@ -98,7 +120,7 @@
       <item>
         <title>Génération des adresses Bitcoin</title>
         <description>&lt;p&gt;&lt;img src=&quot;https://qph.fs.quoracdn.net/main-qimg-6c2c189f74309b175549396b1eb00b7f&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;adresse-bitcoin-&quot;&gt;Adresse Bitcoin ?&lt;/h2&gt; &lt;p&gt;Une adresse Bitcoin, ou simplement une adresse, est un identifiant de 26 à 35 caractères alphanumériques, commençant par le chiffre 1 ou 3, qui représente une destination possible pour un paiement bitcoin. Les adresses peuvent être générées gratuitement par n’importe quel utilisateur de Bitcoin. Par exemple, en utilisant &lt;a href=&quot;https://en.bitcoin.it/wiki/Bitcoin_Core&quot;&gt;Bitcoin Core&lt;/a&gt;, vous pouvez cliquer sur “New Address” et créer une adresse. Il est également possible d’obtenir une adresse Bitcoin en utilisant un compte auprès d’un service d’échange ou de portefeuille en ligne. [&lt;a href=&quot;https://en.bitcoin.it/wiki/Address&quot;&gt;Source: bitcoin wiki&lt;/a&gt;]&lt;/p&gt; &lt;p&gt;Il y a actuellement trois formats d’adresses...</description>
-        <pubDate>Thu, 10 May 2018 21:46:31 +0100</pubDate>
+        <pubDate>Thu, 10 May 2018 22:46:31 +0200</pubDate>
         <link>https://chiheb-nexus.github.io/btcaddress/</link>
         <guid isPermaLink="true">https://chiheb-nexus.github.io/btcaddress/</guid>
         
@@ -116,58 +138,6 @@
         <category>bitcoin</category>
         
         <category>blockchain</category>
-        
-      </item>
-    
-      <item>
-        <title>Parity: Vos premiers pas avec Ethereum</title>
-        <description>&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt; &lt;p&gt;&lt;a href=&quot;https://www.parity.io/&quot;&gt;Parity&lt;/a&gt; est un client fiable et performant,permettant de se connecter au réseau Ethereum sous licence GPLv3. Parity, par défaut, permet un accès rapide à un portefeuille d’Ethereum type Parity Wallet. L’outil permet de:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Créer et gérer les comptes Ethereum&lt;/li&gt; &lt;li&gt;Gérer les ethers et les jetons Ethereum&lt;/li&gt; &lt;li&gt;Créer et enregistrer les jetons&lt;/li&gt; &lt;li&gt;Créer, déployer et interagir avec les smarts contracts&lt;/li&gt; &lt;li&gt;etc.&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Par défaut, Parity démarre un serveur JSONRPC sur &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:8545&lt;/code&gt; et un serveur de websockets sur &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:8546&lt;/code&gt; (ceci est configurable) et supporte plusieurs autres type d’APIs.&lt;/p&gt; &lt;h3 id=&quot;installation&quot;&gt;Installation:&lt;/h3&gt; &lt;p&gt;Il suffit d’aller sur &lt;a href=&quot;https://www.parity.io&quot;&gt;https://www.parity.io&lt;/a&gt;...</description>
-        <pubDate>Tue, 30 Jan 2018 21:46:31 +0100</pubDate>
-        <link>https://chiheb-nexus.github.io/vos-premiers-pas-avec-ethereum/</link>
-        <guid isPermaLink="true">https://chiheb-nexus.github.io/vos-premiers-pas-avec-ethereum/</guid>
-        
-        <category>ethereum</category>
-        
-        <category>dapps</category>
-        
-        <category>geth</category>
-        
-        <category>parity</category>
-        
-        <category>blockchain</category>
-        
-        
-        <category>ethereum</category>
-        
-        <category>blockchain</category>
-        
-        <category>dapps</category>
-        
-      </item>
-    
-      <item>
-        <title>Initiez vous avec les Dapps d'Ethereum</title>
-        <description>&lt;p&gt;&lt;strong&gt;Création d’environnement de travail:&lt;/strong&gt; Dans cet example de Dapps d’Ethereum on va utiliser: &lt;a href=&quot;https://www.python.org/&quot;&gt;Python&lt;/a&gt;, &lt;a href=&quot;https://geth.ethereum.org/downloads/&quot;&gt;Geth&lt;/a&gt;, &lt;a href=&quot;https://github.com/ethereum/web3.py&quot;&gt;web3.py&lt;/a&gt; et &lt;a href=&quot;https://github.com/ethereum/web3.js/&quot;&gt;web3.js&lt;/a&gt;.&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;Installation de &lt;code class=&quot;highlighter-rouge&quot;&gt;Python&lt;/code&gt;: Il suffit d’installer le binaire de ce &lt;a href=&quot;https://www.python.org/&quot;&gt;lien&lt;/a&gt; et ajouter Python à votre viariable d’environnement si vous utiliser Windows. Sinon, généralement, Python est installé par défaut sur votre machine si vous utilisez Gnu\Linux, OS X et *BSD.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;Installation de &lt;code class=&quot;highlighter-rouge&quot;&gt;Geth&lt;/code&gt;: Il suffit d’installer Geth de ce &lt;a href=&quot;https://geth.ethereum.org/downloads/&quot;&gt;lien&lt;/a&gt; puis l’ajouter à votre viariable d’environnement. Si vous utiliser une distribution basée sur Debian, faites ceci: &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span...</description>
-        <pubDate>Sat, 20 Jan 2018 21:46:31 +0100</pubDate>
-        <link>https://chiheb-nexus.github.io/initiez-vous-avec-les-dapps/</link>
-        <guid isPermaLink="true">https://chiheb-nexus.github.io/initiez-vous-avec-les-dapps/</guid>
-        
-        <category>ethereum</category>
-        
-        <category>dapps</category>
-        
-        <category>geth</category>
-        
-        <category>parity</category>
-        
-        <category>blockchain</category>
-        
-        
-        <category>ethereum</category>
-        
-        <category>blockchain</category>
-        
-        <category>dapps</category>
         
       </item>
     

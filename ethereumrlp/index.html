@@ -166,13 +166,6 @@
             </li>
         
       
-        <li>
-        <span class="counter-menu">5</span>
-                <svg viewBox="0 0 50 50" class="icon-arrow-menu">
-                    <use xlink:href="#icon-right-arrow"></use>
-                </svg>
-                <a href="https://chiheb-nexus.github.io/project-euler/"> Project Euler solutions</a>
-        </li>
       </ul>
     
   </nav>
@@ -187,6 +180,16 @@
         <div class="tree-posts">
 
     <h3>Articles</h3>
+
+    
+
+    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <div class="content">
+            <a title="Open the post" href="/django-orm-pandas/">
+                <h2 class="post-title" itemprop="name">Comment-utiliser-Pandas-avec-Django-ORM.md</h2>
+            </a>
+        </div>
+    </article>
 
     
 
@@ -230,32 +233,12 @@
 
     
 
-    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-        <div class="content">
-            <a title="Open the post" href="/vos-premiers-pas-avec-ethereum/">
-                <h2 class="post-title" itemprop="name">Parity:-Vos-premiers-pas-avec-Ethereum.md</h2>
-            </a>
-        </div>
-    </article>
-
-    
-
-    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-        <div class="content">
-            <a title="Open the post" href="/initiez-vous-avec-les-dapps/">
-                <h2 class="post-title" itemprop="name">Initiez-vous-avec-les-Dapps-d'Ethereum.md</h2>
-            </a>
-        </div>
-    </article>
-
-    
-
 </div>
 
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
             
                 <div class="time">
-                    <time itemprop="datePublished" datetime="2018-05-21 03:17:31 +0100">21 May 2018</time>
+                    <time itemprop="datePublished" datetime="2018-05-21 04:17:31 +0200">21 May 2018</time>
                 </div>
             
             <h1 class="post-title" itemprop="name">Ethereum RLP: Explication</h1>
@@ -311,8 +294,8 @@
 
 <h2 id="script-dencodage-rlp-écrit-en-python">Script d’encodage RLP écrit en Python</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Source: https://github.com/ethereum/wiki/wiki/RLP</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Source: https://github.com/ethereum/wiki/wiki/RLP
+</span>
 <span class="k">def</span> <span class="nf">rlp_encode</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">str</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">ord</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mh">0x80</span><span class="p">:</span> <span class="k">return</span> <span class="nb">input</span>
@@ -361,26 +344,26 @@
   <li><strong>La chaîne de caractère <code class="highlighter-rouge">"dog"</code> = RLP =&gt; <code class="highlighter-rouge">[0x83, 'd', 'o', 'g']</code></strong>: <code class="highlighter-rouge">"dog"</code> est une chaîne de caractères de longueur égale à 3 (<code class="highlighter-rouge">len([ord(k) for k in "dog"])</code> est égale à 3). Donc on ajoute un offset <code class="highlighter-rouge">hex(0x80 + 3)</code> qui est égale à <code class="highlighter-rouge">0x83</code> plus la chaîne elle même qui est :
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="o">&gt;</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0x80</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="s">"dog"</span><span class="p">)</span>
 <span class="p">[</span><span class="s">'0x83'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">]</span> 
-<span class="c"># Ou en hexadécimal : </span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0x80</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="s">"dog"</span><span class="p">)</span>
+<span class="c1"># Ou en hexadécimal : 
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0x80</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="s">"dog"</span><span class="p">)</span>
 <span class="err">`</span><span class="p">[</span><span class="s">'0x83'</span><span class="p">,</span> <span class="s">'0x64'</span><span class="p">,</span> <span class="s">'0x6f'</span><span class="p">,</span> <span class="s">'0x67'</span><span class="p">]</span>
 </code></pre></div>    </div>
   </li>
   <li><strong>La liste <code class="highlighter-rouge">["cat", "dog"]</code> = RLP =&gt; <code class="highlighter-rouge">[0xc8, 0x83, 'c', 'a', 't', 0x83, 'd', 'o', 'g']</code></strong>:</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># L'encodage RLP peut être traduit comme suit:</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># L'encodage RLP peut être traduit comme suit:
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">chain</span>
 <span class="err">$</span><span class="o">&gt;</span> <span class="n">fst_encode</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">([[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0x80</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">))]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="s">"cat"</span><span class="p">,</span> <span class="s">"dog"</span><span class="p">]]))</span>
 <span class="err">$</span><span class="o">&gt;</span> <span class="n">fst_encode</span>
 <span class="p">[</span><span class="s">'0x83'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'t'</span><span class="p">,</span> <span class="s">'0x83'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">]</span>
-<span class="c"># On a 8 éléments dans le premier encodage compris entre 0 et 55</span>
-<span class="c"># Donc on ajoute un offset égal à 0xc0 + longueur du premier encodage</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0xc0</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">fst_encode</span><span class="p">))]</span> <span class="o">+</span> <span class="n">fst_encode</span>
-<span class="c"># Et on aura l'encodage RLP:</span>
-<span class="p">[</span><span class="s">'0xc8'</span><span class="p">,</span> <span class="s">'0x83'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'t'</span><span class="p">,</span> <span class="s">'0x83'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">]</span>
-<span class="c">## Pour la format en hexadécimale</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="n">to_rlp</span> <span class="o">=</span> <span class="p">[</span><span class="s">"cat"</span><span class="p">,</span> <span class="s">"dog"</span><span class="p">]</span>
+<span class="c1"># On a 8 éléments dans le premier encodage compris entre 0 et 55
+# Donc on ajoute un offset égal à 0xc0 + longueur du premier encodage
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0xc0</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">fst_encode</span><span class="p">))]</span> <span class="o">+</span> <span class="n">fst_encode</span>
+<span class="c1"># Et on aura l'encodage RLP:
+</span><span class="p">[</span><span class="s">'0xc8'</span><span class="p">,</span> <span class="s">'0x83'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'t'</span><span class="p">,</span> <span class="s">'0x83'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">]</span>
+<span class="c1">## Pour la format en hexadécimale
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="n">to_rlp</span> <span class="o">=</span> <span class="p">[</span><span class="s">"cat"</span><span class="p">,</span> <span class="s">"dog"</span><span class="p">]</span>
 <span class="err">$</span><span class="o">&gt;</span> <span class="n">fst_encode_hex</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">from_iterable</span><span class="p">([[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0x80</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">))]</span> <span class="o">+</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">to_rlp</span><span class="p">]))</span>
 <span class="err">$</span><span class="o">&gt;</span> <span class="n">fst_encode_hex</span>
 <span class="p">[</span><span class="s">'0x83'</span><span class="p">,</span> <span class="s">'0x63'</span><span class="p">,</span> <span class="s">'0x61'</span><span class="p">,</span> <span class="s">'0x74'</span><span class="p">,</span> <span class="s">'0x83'</span><span class="p">,</span> <span class="s">'0x64'</span><span class="p">,</span> <span class="s">'0x6f'</span><span class="p">,</span> <span class="s">'0x67'</span><span class="p">]</span>
@@ -390,40 +373,40 @@
 
 <ul>
   <li><strong>L’entier <code class="highlighter-rouge">15</code> = RLP =&gt; <code class="highlighter-rouge">[0x0f]</code></strong>:
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># En effet, l'encodage en caractère de l'entier 15 est</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># En effet, l'encodage en caractère de l'entier 15 est
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 <span class="s">'</span><span class="se">\x0f</span><span class="s">'</span>
-<span class="c"># Ou d'une autre manière</span>
-<span class="c"># (15).to_bytes(1, byteorder='big')</span>
-<span class="c"># b'\x0f'</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="c1"># Ou d'une autre manière
+# (15).to_bytes(1, byteorder='big')
+# b'\x0f'
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 <span class="s">'0xf'</span>
-<span class="c"># Et 15 est un seul octet compris entre 0x00 et 0x7f</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="mh">0x00</span> <span class="o">&lt;=</span> <span class="mi">15</span> <span class="o">&lt;=</span> <span class="mh">0x7f</span>
+<span class="c1"># Et 15 est un seul octet compris entre 0x00 et 0x7f
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="mh">0x00</span> <span class="o">&lt;=</span> <span class="mi">15</span> <span class="o">&lt;=</span> <span class="mh">0x7f</span>
 <span class="bp">True</span>
-<span class="c"># Donc, le retour de l'encodage RLP est:</span>
-<span class="p">[</span><span class="s">'</span><span class="se">\x0f</span><span class="s">`]</span><span class="err">
+<span class="c1"># Donc, le retour de l'encodage RLP est:
+</span><span class="p">[</span><span class="s">'</span><span class="se">\x0f</span><span class="s">`]</span><span class="err">
 </span></code></pre></div>    </div>
   </li>
   <li><strong>L’enter <code class="highlighter-rouge">1024</code> = RLP =&gt; <code class="highlighter-rouge">[0x82, 0x04, 0x00]</code></strong>:</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># L'encodage RLP de 1024 peut être traduit comme suit:</span>
-<span class="c"># PS: </span>
-<span class="c"># Ethereum support la notation de Big endian</span>
-<span class="c"># https://docs.python.org/3/library/stdtypes.html#int.to_bytes</span>
-<span class="c"># Et On supprime les leading zeros</span>
-<span class="c">## Le format encodé de 1024 en bytes est:</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="n">to_encode</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s">'big'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># L'encodage RLP de 1024 peut être traduit comme suit:
+# PS: 
+# Ethereum support la notation de Big endian
+# https://docs.python.org/3/library/stdtypes.html#int.to_bytes
+# Et On supprime les leading zeros
+## Le format encodé de 1024 en bytes est:
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="n">to_encode</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1024</span><span class="p">)</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s">'big'</span><span class="p">)</span>
 <span class="err">$</span><span class="o">&gt;</span> <span class="n">to_encode</span>
 <span class="n">b</span><span class="s">'</span><span class="se">\x04\x00</span><span class="s">'</span>
-<span class="c"># Ou bien d'une autre manière</span>
-<span class="c"># import struct</span>
-<span class="c"># struct.pack('&gt;I', 1024).decode('ascii').lstrip('\x00').encode()</span>
-<span class="c">## Au final, l'encodage RLP sera:</span>
-<span class="c"># On ajoute un offset de 0x80 parce que la longueur du byte array de 1024</span>
-<span class="c"># est compris entre 0 et 0x7f</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0x80</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">to_encode</span><span class="p">))]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">to_encode</span><span class="p">)</span>
+<span class="c1"># Ou bien d'une autre manière
+# import struct
+# struct.pack('&gt;I', 1024).decode('ascii').lstrip('\x00').encode()
+## Au final, l'encodage RLP sera:
+# On ajoute un offset de 0x80 parce que la longueur du byte array de 1024
+# est compris entre 0 et 0x7f
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0x80</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">to_encode</span><span class="p">))]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">to_encode</span><span class="p">)</span>
 <span class="p">[</span><span class="s">'0x82'</span><span class="p">,</span> <span class="s">'0x4'</span><span class="p">,</span> <span class="s">'0x0'</span><span class="p">]</span>
 </code></pre></div></div>
 
@@ -431,17 +414,17 @@
   <li><strong>La liste <code class="highlighter-rouge">[ [], [[]], [ [], [[]] ] ]</code> = RLP =&gt; <code class="highlighter-rouge">['0xc7', '0xc0', '0xc1', '0xc0', '0xc3', '0xc0', '0xc1', '0xc0']</code></strong>:</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Pour ce type complexe, on va essayer de le découper </span>
-<span class="c"># en opérations simples</span>
-<span class="p">[</span>  <span class="p">[</span> <span class="p">],</span>          <span class="p">[</span> <span class="p">[</span> <span class="p">]</span> <span class="p">],</span>                    <span class="p">[</span> <span class="p">[</span> <span class="p">],</span> <span class="p">[[]]</span> <span class="p">]</span> <span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Pour ce type complexe, on va essayer de le découper 
+# en opérations simples
+</span><span class="p">[</span>  <span class="p">[</span> <span class="p">],</span>          <span class="p">[</span> <span class="p">[</span> <span class="p">]</span> <span class="p">],</span>                    <span class="p">[</span> <span class="p">[</span> <span class="p">],</span> <span class="p">[[]]</span> <span class="p">]</span> <span class="p">]</span>
     <span class="o">^</span>             <span class="o">^^^^^^</span>                      <span class="o">^^^^^^^^^^^^^</span>   
 <span class="p">[</span> <span class="s">'0xc0'</span><span class="p">,</span>      <span class="s">'0xc1'</span><span class="p">,</span> <span class="s">'0xc0'</span>  <span class="p">,</span>       <span class="s">'0xc3'</span><span class="p">,</span> <span class="s">'0xc0'</span><span class="p">,</span> <span class="s">'0xc1'</span><span class="p">,</span> <span class="s">'0xc0'</span> <span class="p">]</span>
    <span class="o">^^^^</span>         <span class="o">^^^^^^^^^^^^</span>            <span class="o">^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
  <span class="n">liste</span> <span class="n">vide</span>     <span class="n">liste</span> <span class="n">avec</span> <span class="mi">1</span> <span class="n">elm</span>           <span class="n">liste</span> <span class="n">avec</span> <span class="mi">3</span> <span class="n">elms</span>
-<span class="c"># On 7 éléments, donc on ajoute l'offset:</span>
-<span class="c"># 0xc0 + 7 vu que la longueur est comprise entre 0 et 55 octets:</span>
-<span class="c"># Et on obtien:</span>
-<span class="p">[</span><span class="s">'0xc7'</span><span class="p">,</span> <span class="s">'0xc0'</span><span class="p">,</span> <span class="s">'0xc1'</span><span class="p">,</span> <span class="s">'0xc0'</span><span class="p">,</span> <span class="s">'0xc3'</span><span class="p">,</span> <span class="s">'0xc0'</span><span class="p">,</span> <span class="s">'0xc1'</span><span class="p">,</span> <span class="s">'0xc0'</span> <span class="p">]</span>
+<span class="c1"># On 7 éléments, donc on ajoute l'offset:
+# 0xc0 + 7 vu que la longueur est comprise entre 0 et 55 octets:
+# Et on obtien:
+</span><span class="p">[</span><span class="s">'0xc7'</span><span class="p">,</span> <span class="s">'0xc0'</span><span class="p">,</span> <span class="s">'0xc1'</span><span class="p">,</span> <span class="s">'0xc0'</span><span class="p">,</span> <span class="s">'0xc3'</span><span class="p">,</span> <span class="s">'0xc0'</span><span class="p">,</span> <span class="s">'0xc1'</span><span class="p">,</span> <span class="s">'0xc0'</span> <span class="p">]</span>
 
 </code></pre></div></div>
 
@@ -449,15 +432,15 @@
   <li>**La chaîne <code class="highlighter-rouge">"Lorem ipsum dolor sit amet, consectetur adipisicing elit"</code> = RLP =&gt; <code class="highlighter-rouge">['0xb8', '0x38', '0x4c', '0x6f', ..., '0x6c', '0x69', '0x74']</code>:</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># La longueur de la chaîne est:</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="s">'Lorem ipsum dolor sit amet, consectetur adipisicing elit'</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># La longueur de la chaîne est:
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="s">'Lorem ipsum dolor sit amet, consectetur adipisicing elit'</span>
 <span class="err">$</span><span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="mi">56</span>
-<span class="c"># Donc, on est dans le cas où la longueur de la chaîne de caractère est supérieure à 55</span>
-<span class="c"># Donc, on ajoute un offset:</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="n">offset</span> <span class="o">=</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0xb7</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))]</span>
-<span class="c"># Et l'encodage RLP final est:</span>
-<span class="err">$</span><span class="o">&gt;</span> <span class="n">offset</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1"># Donc, on est dans le cas où la longueur de la chaîne de caractère est supérieure à 55
+# Donc, on ajoute un offset:
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="n">offset</span> <span class="o">=</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0xb7</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))]</span>
+<span class="c1"># Et l'encodage RLP final est:
+</span><span class="err">$</span><span class="o">&gt;</span> <span class="n">offset</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="p">[</span><span class="s">'0xb8'</span><span class="p">,</span> <span class="s">'0x38'</span><span class="p">,</span> <span class="s">'L'</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="s">'l'</span><span class="p">,</span> <span class="s">'i'</span><span class="p">,</span> <span class="s">'t'</span><span class="p">]</span>
 </code></pre></div></div>
 

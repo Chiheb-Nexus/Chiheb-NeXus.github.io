@@ -166,13 +166,6 @@
             </li>
         
       
-        <li>
-        <span class="counter-menu">5</span>
-                <svg viewBox="0 0 50 50" class="icon-arrow-menu">
-                    <use xlink:href="#icon-right-arrow"></use>
-                </svg>
-                <a href="https://chiheb-nexus.github.io/project-euler/"> Project Euler solutions</a>
-        </li>
       </ul>
     
   </nav>
@@ -187,6 +180,16 @@
         <div class="tree-posts">
 
     <h3>Articles</h3>
+
+    
+
+    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <div class="content">
+            <a title="Open the post" href="/django-orm-pandas/">
+                <h2 class="post-title" itemprop="name">Comment-utiliser-Pandas-avec-Django-ORM.md</h2>
+            </a>
+        </div>
+    </article>
 
     
 
@@ -230,32 +233,12 @@
 
     
 
-    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-        <div class="content">
-            <a title="Open the post" href="/vos-premiers-pas-avec-ethereum/">
-                <h2 class="post-title" itemprop="name">Parity:-Vos-premiers-pas-avec-Ethereum.md</h2>
-            </a>
-        </div>
-    </article>
-
-    
-
-    <article role="article" class="post-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-        <div class="content">
-            <a title="Open the post" href="/initiez-vous-avec-les-dapps/">
-                <h2 class="post-title" itemprop="name">Initiez-vous-avec-les-Dapps-d'Ethereum.md</h2>
-            </a>
-        </div>
-    </article>
-
-    
-
 </div>
 
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
             
                 <div class="time">
-                    <time itemprop="datePublished" datetime="2018-05-28 16:21:31 +0100">28 May 2018</time>
+                    <time itemprop="datePublished" datetime="2018-05-28 17:21:31 +0200">28 May 2018</time>
                 </div>
             
             <h1 class="post-title" itemprop="name">Ethereum POA en utilisant Geth</h1>
@@ -661,12 +644,12 @@ at block: 136 <span class="o">(</span>Tue, 29 May 2018 14:35:29 CET<span class="
 <span class="o">&gt;&gt;&gt;</span> <span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">coinbase</span>
 <span class="s">'0x2d299ed001270F8C2f02abDDa2Bda4E5B4CCa348'</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">gasPrice</span>
-<span class="mi">1</span> <span class="c"># en wei</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getBalance</span><span class="p">(</span><span class="s">"0x2d299ed001270F8C2f02abDDa2Bda4E5B4CCa348"</span><span class="p">)</span>
-<span class="mi">904625697166532776746648320380374280103671755200316906557262375061821304312</span> <span class="c"># en wei</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">w3</span><span class="o">.</span><span class="n">fromWei</span><span class="p">(</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getBalance</span><span class="p">(</span><span class="s">"0x2d299ed001270F8C2f02abDDa2Bda4E5B4CCa348"</span><span class="p">),</span> <span class="s">'ether'</span><span class="p">)</span>
-<span class="n">Decimal</span><span class="p">(</span><span class="s">'904625697166532776746648320380374280103671755200316906557.262375061821304312'</span><span class="p">)</span> <span class="c"># en ether</span>
-</code></pre></div></div>
+<span class="mi">1</span> <span class="c1"># en wei
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getBalance</span><span class="p">(</span><span class="s">"0x2d299ed001270F8C2f02abDDa2Bda4E5B4CCa348"</span><span class="p">)</span>
+<span class="mi">904625697166532776746648320380374280103671755200316906557262375061821304312</span> <span class="c1"># en wei
+</span><span class="o">&gt;&gt;&gt;</span> <span class="n">w3</span><span class="o">.</span><span class="n">fromWei</span><span class="p">(</span><span class="n">w3</span><span class="o">.</span><span class="n">eth</span><span class="o">.</span><span class="n">getBalance</span><span class="p">(</span><span class="s">"0x2d299ed001270F8C2f02abDDa2Bda4E5B4CCa348"</span><span class="p">),</span> <span class="s">'ether'</span><span class="p">)</span>
+<span class="n">Decimal</span><span class="p">(</span><span class="s">'904625697166532776746648320380374280103671755200316906557.262375061821304312'</span><span class="p">)</span> <span class="c1"># en ether
+</span></code></pre></div></div>
 
 <p><strong>Au final:</strong> On a pu créer une blockchain privée d’ethereum avec le consensus POA qui peut nous être utile pour le cas où on cherche à créer un réseau blockchain <code class="highlighter-rouge">sans GAS/sans frais de transaction</code> ou avec des frais moins élevés ou bien en montant des noeuds spécifiques qui seront les seuls participants de confiance du réseau et bien sûr l’un des atouts du POA c’est qu’il n’utilise pas des réssources énormes pour la validation des blocs (à l’instar du consensus POW, Proof Of Work).</p>
 
