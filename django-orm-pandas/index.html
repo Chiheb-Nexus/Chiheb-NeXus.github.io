@@ -557,7 +557,7 @@ Ali - Python developer &lt;Chiheb&gt;
     <span class="s">"""Create DataFrame from database"""</span>
     <span class="c1"># Ceci permet de générer une liste des verbose_name qu'on a utilisé
 </span>    <span class="c1"># Dans la définition de nos models dans l'ORM de Django
-</span>    <span class="c1"># Et dans notre cas, ces verbose_name sont les identiques aux noms 
+</span>    <span class="c1"># Et dans notre cas, ces verbose_name sont identiques aux noms 
 </span>    <span class="c1"># de colonnes du document EXCEL
 </span>    <span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">field</span><span class="o">.</span><span class="n">verbose_name</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">Developer</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">fields</span>
@@ -584,7 +584,8 @@ Ali - Python developer &lt;Chiheb&gt;
 
 <p>voici des exemples:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">example_project</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Avg</span><span class="p">,</span> <span class="n">Sum</span>
+<span class="kn">from</span> <span class="nn">example_project</span> <span class="kn">import</span> <span class="n">models</span>
 
 <span class="k">def</span> <span class="nf">pprint</span><span class="p">(</span><span class="n">dataframe</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="s">''</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="s">''</span><span class="p">):</span>
     <span class="s">"""Pretty print data"""</span>
