@@ -5,9 +5,35 @@
     <description>Blog dédié à la technologie de la Blockchain et au développement informatique en général</description>
     <link>https://chiheb-nexus.github.io/</link>
     <atom:link href="https://chiheb-nexus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 May 2019 17:57:06 +0200</pubDate>
-    <lastBuildDate>Sun, 12 May 2019 17:57:06 +0200</lastBuildDate>
+    <pubDate>Thu, 02 Jan 2020 18:14:26 +0100</pubDate>
+    <lastBuildDate>Thu, 02 Jan 2020 18:14:26 +0100</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Fullstack Python web app: Flask &amp; React &amp; Webpack</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://repository-images.githubusercontent.com/197383174/16a44e80-a92d-11e9-973b-2b285df0da3b&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt; &lt;p&gt;Le monde du développent des sites web est tellement vaste que chaque jour nous, les développeurs, sommes amenés à utiliser/apprendre des nouvelles technologies. La tendance à la mode, aujourd’hui, c’est du faire des SPA (Single Page Application) en utilisant, généralement, React, Angular et VueJS (je note aussi Svelte) frameworks. Cependant, comme étant un développeur Python à la base, j’ai cherché sur net un tutoriel qui étale comment on devra procéder pour créer un site web en utilisant &lt;code class=&quot;highlighter-rouge&quot;&gt;Flask&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;React&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;Hélas, tout ce que j’ai trouvé ce sont soi des tutoriels qui utilisent...</description>
+        <pubDate>Tue, 31 Dec 2019 17:46:31 +0100</pubDate>
+        <link>https://chiheb-nexus.github.io/flask-react-app/</link>
+        <guid isPermaLink="true">https://chiheb-nexus.github.io/flask-react-app/</guid>
+        
+        <category>flask</category>
+        
+        <category>React</category>
+        
+        <category>Webpack</category>
+        
+        <category>npm</category>
+        
+        <category>virtualenv</category>
+        
+        
+        <category>flask</category>
+        
+        <category>react</category>
+        
+        <category>webpack</category>
+        
+      </item>
     
       <item>
         <title>Comment utiliser Pandas avec Django ORM</title>

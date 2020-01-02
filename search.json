@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Fullstack Python web app: Flask &amp; React &amp; Webpack",
+      "category" : "flaskreactwebpack",
+      "tags"     : "flask, React, Webpack, npm, and virtualenv",
+      "url"      : "/flask-react-app/",
+      "date"     : "31 Dec 2019"
+    } ,
+  
+    {
       "title"    : "Comment utiliser Pandas avec Django ORM",
       "category" : "djangopandas",
       "tags"     : "python, pandas, django, and orm",
