@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Python: Multithreading VS Multiprocessing",
+      "category" : "pythonthreadingmultiprocessing",
+      "tags"     : "python, multithreading, htreading, and muliprocessing",
+      "url"      : "/Multithreading-vs-multiprocessing/",
+      "date"     : "02 May 2020"
+    } ,
+  
+    {
       "title"    : "Fullstack Python web app: Flask &amp; React &amp; Webpack",
       "category" : "flaskreactwebpack",
       "tags"     : "flask, React, Webpack, npm, and virtualenv",
