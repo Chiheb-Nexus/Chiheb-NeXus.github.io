@@ -347,17 +347,30 @@
 <noscript><pre>400: Invalid request</pre></noscript>
 <script src="https://gist.github.com/01b2a280d8040ee9a2ad0524ba40ba57.js"> </script>
 
-<p><strong>Multiprocessing avec une Pool:</strong> Notez ici le fait que les processus sont indépendant les un des autres.</p>
+<p><strong>Multiprocessing avec une Pool:</strong> Notez ici le fait que les processus sont indépendant les uns des autres.</p>
 
 <noscript><pre>400: Invalid request</pre></noscript>
 <script src="https://gist.github.com/11647e770969124b3330331793d9f8b0.js"> </script>
 
-<p>Avant de finir: Une question qui se pose toujours: <strong>Quand dois-je utiliser le <code class="highlighter-rouge">Multithreading</code> et quand dois-je utiliser le <code class="highlighter-rouge">Multiprocessing</code> ?</strong></p>
+<p><strong>Coroutines en utilisant Async/Await:</strong></p>
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/6650ca53563659830495d96c7f460509.js"> </script>
+
+<p><strong>Coroutines en utilisant ThreadPoolExecutor:</strong></p>
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/fa2821faca1b423dbf2de1490caf7086.js"> </script>
+
+<p><strong>Coroutines en utilisant des Mutex:</strong></p>
+<noscript><pre>400: Invalid request</pre></noscript>
+<script src="https://gist.github.com/2175ddb596ee874e0e0b527782bce98e.js"> </script>
+
+<p>Avant de finir: Une question qui se pose toujours: <strong>Quand dois-je utiliser le <code class="highlighter-rouge">Multithreading</code> ? Quand dois-je utiliser le <code class="highlighter-rouge">Multiprocessing</code> ?</strong> et <strong>Quand dois-je utiliser les <code class="highlighter-rouge">Coroutines</code> ?</strong></p>
 
 <p>En gros:</p>
 <ul>
   <li><strong>Multiprocessing:</strong> Quand on cherche de paralléliser des processus liés à la consommation des unités de calcul (CPU bound)</li>
   <li><strong>Multithreading/Concurrency:</strong> Quand on cherche de “paralléliser”/faire des taches concurrentes des processus liés à IO (Input Output) (IO bound)</li>
+  <li><strong>Coroutines:</strong> Quand on le peut sinon on utilise le <code class="highlighter-rouge">Multithreading</code>.</li>
 </ul>
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Thats_all_folks.svg" /></p>
