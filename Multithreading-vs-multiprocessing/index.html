@@ -286,7 +286,7 @@
   <li>Le commutateur de thread est généralement moins coûteux que le commutateur de processus</li>
 </ul>
 
-<p><strong>Un exemple concret:</strong> Supposons qu’on est entrain de créer un GUI (interface graphique) et dans cette dernière on aura besoin de cliquer sur un bouton pour afficher un text dans une zone précise de cette interface. De ce fait:</p>
+<p><strong>Un exemple concret:</strong> Supposons qu’on est entrain de créer une GUI (interface graphique) et dans cette dernière on aura besoin de cliquer sur un bouton pour afficher un text dans une zone précise de cette interface. De ce fait:</p>
 <ul>
   <li>En utilisant le principe de <code class="highlighter-rouge">multiprocessing</code>: Le programme va créer un nouveau process, une nouvelle interface, et affichera le texte. C’est à dire, on va créer un nouveau espace d’adressage virtuel en chargeant une copie du code, les données etc.. en lançant la nouvelle fonctionnalité d’affichage du text après le clic sur le bouton. Ceci dit, le nouveau text ne sera visible que dans la nouvelle instance du programme.</li>
   <li>En utilisant le principe de <code class="highlighter-rouge">threading/Multithreading</code>: Le programme va créer un nouveau thread au sein du process principal de l’interface graphique et lancera la fonction d’affichage du texte. Ceci dit, le thread sera lancé comme une nouvelle unité de calcul au sein du process qui traite l’interface graphique et tout le code, les données, etc.. du programme principale seront accéssible par tous les threads lancés par ce process en question.</li>
