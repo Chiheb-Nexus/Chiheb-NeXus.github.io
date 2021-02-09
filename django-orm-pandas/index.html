@@ -437,7 +437,7 @@ Running migrations:
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>──╼ <span class="o">[&gt;]</span> <span class="nb">sudo </span>apt <span class="nb">install </span>sqlite3
 </code></pre></div></div>
 
-<p>Maintenant, si on cherche si la migrations a bien eu lieu. On peut entrer dans le <code class="highlighter-rouge">Database Shell</code> que Django nous offre et voir les tableau (Ou bien exécuter une requete avec SQLite3 et vous devrez avoir les memes résultats)</p>
+<p>Maintenant, si on cherche si la migrations a bien eu lieu. On peut entrer dans le <code class="language-plaintext highlighter-rouge">Database Shell</code> que Django nous offre et voir les tableau (Ou bien exécuter une requete avec SQLite3 et vous devrez avoir les memes résultats)</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>──╼ <span class="o">[&gt;]</span> python manage.py dbshell
 SQLite version 3.11.0 2016-02-15 17:29:24
@@ -455,7 +455,7 @@ sqlite&gt; <span class="k">select</span> <span class="k">*</span> from job<span 
 sqlite&gt; 
 </code></pre></div></div>
 
-<p>Les memes résultats avec <code class="highlighter-rouge">Django Shell</code></p>
+<p>Les memes résultats avec <code class="language-plaintext highlighter-rouge">Django Shell</code></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>──╼ <span class="o">[&gt;]</span> python manage.py shell
 Python 3.6.8 <span class="o">(</span>default, May  7 2019, 14:58:50<span class="o">)</span> 
@@ -478,13 +478,13 @@ Type <span class="s2">"help"</span>, <span class="s2">"copyright"</span>, <span 
 
 <p>Et pour lire un document EXCEL avec Python, il y a plusieurs paquets qui nous facilitent la vie tel:</p>
 <ul>
-  <li><code class="highlighter-rouge">openpyxl</code>: Qui permet de lire et écrire sur un document EXCEL 2010 (.xlsx)</li>
-  <li><code class="highlighter-rouge">xlswriter</code>: Comment sont nom l’indique c’est seulement pour l’écriture dans des documents EXCEL 2010</li>
-  <li><code class="highlighter-rouge">xlrd</code>: Qui permet de lire et écrire sur les anciennces versions des documents EXCEL</li>
-  <li><code class="highlighter-rouge">xlwt</code>: comment <code class="highlighter-rouge">xlswriter</code> mais seulement pour les anciennes versions des documents EXCEL</li>
+  <li><code class="language-plaintext highlighter-rouge">openpyxl</code>: Qui permet de lire et écrire sur un document EXCEL 2010 (.xlsx)</li>
+  <li><code class="language-plaintext highlighter-rouge">xlswriter</code>: Comment sont nom l’indique c’est seulement pour l’écriture dans des documents EXCEL 2010</li>
+  <li><code class="language-plaintext highlighter-rouge">xlrd</code>: Qui permet de lire et écrire sur les anciennces versions des documents EXCEL</li>
+  <li><code class="language-plaintext highlighter-rouge">xlwt</code>: comment <code class="language-plaintext highlighter-rouge">xlswriter</code> mais seulement pour les anciennes versions des documents EXCEL</li>
 </ul>
 
-<p>Par contre dans ce tutoriel on va utiliser <code class="highlighter-rouge">openpyxl</code> car on va travailler avec une récentre version de <code class="highlighter-rouge">LibreOffice</code> qui peut générer des documents EXCEL compatibles avec EXCEL 2003/2010</p>
+<p>Par contre dans ce tutoriel on va utiliser <code class="language-plaintext highlighter-rouge">openpyxl</code> car on va travailler avec une récentre version de <code class="language-plaintext highlighter-rouge">LibreOffice</code> qui peut générer des documents EXCEL compatibles avec EXCEL 2003/2010</p>
 
 <p>… Donc, voici une fonction qui permet de tout lire dans un tableur de document EXCEL. En théorie, ça permet de lire toute dans le document EXCEL, mais je n’ai pas creusé beaucoup avec les différentes formes qu’un document EXCEL peut avoir pour générer une fonction qui peut tout lire.
 Mais, si votre documents EXCEL est composé par des colonnes et des lignes, cette fonction fera l’affaire:</p>
@@ -534,7 +534,7 @@ Mais, si votre documents EXCEL est composé par des colonnes et des lignes, cett
             <span class="k">print</span><span class="p">(</span><span class="n">developer</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><em>NB</em>: On doit ajouter <code class="highlighter-rouge">DJANGO_SETTINGS_MODULE</code> path à nos variables d’environnement.</p>
+<p><em>NB</em>: On doit ajouter <code class="language-plaintext highlighter-rouge">DJANGO_SETTINGS_MODULE</code> path à nos variables d’environnement.</p>
 
 <p>Et l’exécution de cette fonction va générer comme output:</p>
 
@@ -547,7 +547,7 @@ Ali - Python developer &lt;Chiheb&gt;
 
 <p><strong>Comment générer un DataFrame avec les données de la base de données?</strong></p>
 
-<p>Pour que ça soit possible, on doit installer <code class="highlighter-rouge">Pandas</code> en premier lieu, ensuite, on doit lire les données de notre base de données pour au final créer un DataFrame.</p>
+<p>Pour que ça soit possible, on doit installer <code class="language-plaintext highlighter-rouge">Pandas</code> en premier lieu, ensuite, on doit lire les données de notre base de données pour au final créer un DataFrame.</p>
 
 <p>Pour lire les données de notre base de donnée:</p>
 
@@ -675,7 +675,7 @@ Ali - Python developer &lt;Chiheb&gt;
     <span class="p">)</span>
 </code></pre></div></div>
 
-<p>Et on lance la fonction <code class="highlighter-rouge">operations</code> on aura comme affichage:</p>
+<p>Et on lance la fonction <code class="language-plaintext highlighter-rouge">operations</code> on aura comme affichage:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>└──╼ <span class="o">[&gt;]</span> python process.py 
 <span class="c">##### Average Age #####</span>

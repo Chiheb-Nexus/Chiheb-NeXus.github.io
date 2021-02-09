@@ -276,7 +276,7 @@
 
 <p><img src="/assets/img/shark.jpg" /></p>
 
-<p>Dans ce tutoriel, on va créer, déployer et interagir avec un <a href="https://fr.wikipedia.org/wiki/Ethereum">Ethereum</a> Smart Contract en utilisant <code class="highlighter-rouge">Python3</code> et les outils de développement d’un Smart contract d’Ethereum, qu’on va les voir tout de suite, sans la création d’un Noeud (Geth ou/et Parity), mais seulement en utilisant les noeuds de <a href="https://infura.io/"><code class="highlighter-rouge">infura.io</code></a>.</p>
+<p>Dans ce tutoriel, on va créer, déployer et interagir avec un <a href="https://fr.wikipedia.org/wiki/Ethereum">Ethereum</a> Smart Contract en utilisant <code class="language-plaintext highlighter-rouge">Python3</code> et les outils de développement d’un Smart contract d’Ethereum, qu’on va les voir tout de suite, sans la création d’un Noeud (Geth ou/et Parity), mais seulement en utilisant les noeuds de <a href="https://infura.io/"><code class="language-plaintext highlighter-rouge">infura.io</code></a>.</p>
 
 <p><strong>prérequis:</strong></p>
 
@@ -305,9 +305,9 @@ installing-solidity.html#binary-packages">Solidity Compiler: solc</a>
 
 <p><strong>Création d’un environnement de travail:</strong></p>
 
-<p>Création d’un environnement virtuel pour <code class="highlighter-rouge">Python3</code> et création d’un dossier dans l’environnement virtuel avec des fichiers qu’on va utiliser pour la compilation, déploiement, interaction et tester la communication avec un Smart Contract.</p>
+<p>Création d’un environnement virtuel pour <code class="language-plaintext highlighter-rouge">Python3</code> et création d’un dossier dans l’environnement virtuel avec des fichiers qu’on va utiliser pour la compilation, déploiement, interaction et tester la communication avec un Smart Contract.</p>
 
-<p><strong>NB:</strong> Le code qui va suivre est testé sur <code class="highlighter-rouge">Ubuntu 16.04.3</code> et avec <code class="highlighter-rouge">Python 3.5.2</code></p>
+<p><strong>NB:</strong> Le code qui va suivre est testé sur <code class="language-plaintext highlighter-rouge">Ubuntu 16.04.3</code> et avec <code class="language-plaintext highlighter-rouge">Python 3.5.2</code></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> <span class="nb">cd</span> <span class="c"># aller au dossier /home/user/</span>
 <span class="nv">$&gt;</span> virtualenv eth_contract <span class="c"># création d'un environnement virtuel </span>
@@ -562,7 +562,7 @@ installing-solidity.html#binary-packages">Solidity Compiler: solc</a>
 -&gt; Compilation terminée avec succès!
 </code></pre></div></div>
 
-<p>Et le contenu du fichier <code class="highlighter-rouge">compiled_contract</code>:</p>
+<p>Et le contenu du fichier <code class="language-plaintext highlighter-rouge">compiled_contract</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>eth_contract<span class="o">)</span> ┌─[Chiheb@NeXus]─[~/tutos/eth_contract/working_with_contracts]
 └──╼ <span class="o">[&gt;]</span> <span class="nb">cat </span>compiled_contract
@@ -573,11 +573,11 @@ installing-solidity.html#binary-packages">Solidity Compiler: solc</a>
 SWAP1 JUMP STOP LOG1 PUSH6 0x627A7A723058 KECCAK256 0x5e 0xe8 PC CALLVALUE DUP5 PUSH25 0xE19FD87537C88E9C6E4AE2284E9E3F06B13E9DFFF92C21303D DUP9 STOP 0x29 <span class="s2">"}
 </span></code></pre></div></div>
 
-<p>Donc, comme on peut le voir, la compilation a été faite avec succès et les résultats de la compilation ont été enregistrées dans un fichier nommée <code class="highlighter-rouge">compiled_contract</code>.</p>
+<p>Donc, comme on peut le voir, la compilation a été faite avec succès et les résultats de la compilation ont été enregistrées dans un fichier nommée <code class="language-plaintext highlighter-rouge">compiled_contract</code>.</p>
 
-<p>Maintenant, testons le déploiement du Smart contract sur le network <a href="https://ethereum.stackexchange.com/questions/13534/what-is-actually-ropsten-what-is-a-new-network"><code class="highlighter-rouge">ropsten: testnet</code></a></p>
+<p>Maintenant, testons le déploiement du Smart contract sur le network <a href="https://ethereum.stackexchange.com/questions/13534/what-is-actually-ropsten-what-is-a-new-network"><code class="language-plaintext highlighter-rouge">ropsten: testnet</code></a></p>
 
-<p><strong>NB:</strong> Avant de tester ce code, veuillez créer une adresse Ethereum (Public &amp; Private keys) et l’alimenter avec des ethers du réseau <code class="highlighter-rouge">ropsten</code>. Vous pouvez utiliser le “faucet” de <code class="highlighter-rouge">metamask</code> via ce <a href="https://faucet.metamask.io/"><code class="highlighter-rouge">lien: https://faucet.metamask.io/</code></a></p>
+<p><strong>NB:</strong> Avant de tester ce code, veuillez créer une adresse Ethereum (Public &amp; Private keys) et l’alimenter avec des ethers du réseau <code class="language-plaintext highlighter-rouge">ropsten</code>. Vous pouvez utiliser le “faucet” de <code class="language-plaintext highlighter-rouge">metamask</code> via ce <a href="https://faucet.metamask.io/"><code class="language-plaintext highlighter-rouge">lien: https://faucet.metamask.io/</code></a></p>
 
 <p><img src="https://janellohm.files.wordpress.com/2013/07/programmers-funny-pictures-coding-jokes.jpg" /></p>
 
@@ -627,7 +627,7 @@ SWAP1 JUMP STOP LOG1 PUSH6 0x627A7A723058 KECCAK256 0x5e 0xe8 PC CALLVALUE DUP5 
 -&gt; Écriture terminée avec succès!
 </code></pre></div></div>
 
-<p>Comme on peut voir, le déploiement a été fait avec succès et on a pu avoir l’adresse du Smart contract déployé qui est: <code class="highlighter-rouge">0x47C252818FA567d8AE9F06bDAfbfA5987072E64B</code></p>
+<p>Comme on peut voir, le déploiement a été fait avec succès et on a pu avoir l’adresse du Smart contract déployé qui est: <code class="language-plaintext highlighter-rouge">0x47C252818FA567d8AE9F06bDAfbfA5987072E64B</code></p>
 
 <p><img src="https://i.pinimg.com/736x/25/d3/2b/25d32be37717b9e2f3ee2d083e6a5a5a--engineering-memes-mundo-geek.jpg" /></p>
 
@@ -678,7 +678,7 @@ New message:  Chiheb Nexus
 
 <h2 id="bonus-vérification-des-informations-sur-etherscan-d">Bonus: Vérification des informations sur etherscan :D</h2>
 
-<p>Tout d’abord, allons sur l’adresse de notre Smart contract <a href="https://ropsten.etherscan.io/address/0x47c252818fa567d8ae9f06bdafbfa5987072e64b"><code class="highlighter-rouge">https://ropsten.etherscan.io/address/0x47c252818fa567d8ae9f06bdafbfa5987072e64b</code></a> (Noter l’URL: <code class="highlighter-rouge">ropsten.etherscan.io</code>, car notre exemple fonctionne sur la testnet Ropsten).</p>
+<p>Tout d’abord, allons sur l’adresse de notre Smart contract <a href="https://ropsten.etherscan.io/address/0x47c252818fa567d8ae9f06bdafbfa5987072e64b"><code class="language-plaintext highlighter-rouge">https://ropsten.etherscan.io/address/0x47c252818fa567d8ae9f06bdafbfa5987072e64b</code></a> (Noter l’URL: <code class="language-plaintext highlighter-rouge">ropsten.etherscan.io</code>, car notre exemple fonctionne sur la testnet Ropsten).</p>
 
 <p><img src="https://i.pinimg.com/originals/b2/5d/59/b25d591a91c0f8c43e73afdb8cc8ca23.jpg" /></p>
 
@@ -696,7 +696,7 @@ New message:  Chiheb Nexus
 <p><strong>4. Et voilà ! Notre Smart Contract est vérifié et validé sur etherscan</strong>
 <img src="/assets/img/contract_4.png" /></p>
 
-<p><strong>5. Allons sur l’adresse de notre <a href="https://ropsten.etherscan.io/address/0x47c252818fa567d8ae9f06bdafbfa5987072e64b#code"><code class="highlighter-rouge">Smart contract</code></a></strong>
+<p><strong>5. Allons sur l’adresse de notre <a href="https://ropsten.etherscan.io/address/0x47c252818fa567d8ae9f06bdafbfa5987072e64b#code"><code class="language-plaintext highlighter-rouge">Smart contract</code></a></strong>
 <img src="/assets/img/contract_5.png" /></p>
 
 <p>Cheers :D !</p>

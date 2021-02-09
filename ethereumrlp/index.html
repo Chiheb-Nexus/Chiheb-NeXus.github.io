@@ -297,19 +297,19 @@
 
 <p>Tous ces objets sont des éléments valides pour un encodage RLP:</p>
 <ul>
-  <li><code class="highlighter-rouge">"cat"</code></li>
-  <li><code class="highlighter-rouge">[]</code></li>
-  <li><code class="highlighter-rouge">["cat"]</code></li>
-  <li><code class="highlighter-rouge">[["cat"], "hello", [], ""]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">"cat"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">[]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">["cat"]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">[["cat"], "hello", [], ""]</code></li>
 </ul>
 
 <p>En total, il y a <strong>quatre</strong> différentes règles fondamentales lors de l’encodage RLP qui sont:</p>
 
 <ol>
-  <li>Pour un <strong>seul octet (byte)</strong> dont la valeur est dans la plage <code class="highlighter-rouge">[0x00, 0x7f]</code>, le retour de l’encodage RLP de cet octet est <strong>lui même</strong>. Sinon, si une chaîne a une <strong>longueur de 0 à 55 octets</strong>, le retour de l’encodage RLP consiste en un <strong>seul octet de valeur <code class="highlighter-rouge">0x80</code> plus la longueur de la chaîne suivie de la chaîne</strong>. La plage du premier octet est donc <code class="highlighter-rouge">[0x80, 0xb7]</code>.</li>
-  <li>Si une chaîne a une longueur de <strong>plus de 55 octets</strong>, le retour de l’encodage RLP consiste en un <strong>seul octet de valeur <code class="highlighter-rouge">0xb7</code> plus la longueur en octets de la longueur de la chaîne sous forme binaire, suivie de la longueur de la chaîne, suivie de la chaîne</strong>. Par exemple, une chaîne de longueur 1024 serait codée sous la forme <code class="highlighter-rouge">"\xb9\x04\x00"</code> suivie de la chaîne. La plage du premier octet est donc <code class="highlighter-rouge">[0xb8, 0xbf]</code>.</li>
-  <li>Si la charge utile totale d’une liste (c’est-à-dire la longueur combinée de tous ses éléments codés en RLP) est comprise entre <strong>0 et 55 octets, le codage RLP consiste en un seul octet de valeur <code class="highlighter-rouge">0xc0</code> plus la longueur de la liste suivie de la concaténation du retour de l’encodages RLP des éléments</strong>. La plage du premier octet est donc <code class="highlighter-rouge">[0xc0, 0xf7]</code>.</li>
-  <li>Si la charge utile totale d’une liste est <strong>supérieure à 55 octets, le codage RLP consiste en un seul octet de valeur <code class="highlighter-rouge">0xf7</code> plus la longueur en octets de la longueur de la charge utile sous forme binaire, suivie de la longueur de la charge utile, suivie par la concaténation du retour de l’encodages RLP des éléments</strong>. La plage du premier octet est donc <code class="highlighter-rouge">[0xf8, 0xff]</code>.</li>
+  <li>Pour un <strong>seul octet (byte)</strong> dont la valeur est dans la plage <code class="language-plaintext highlighter-rouge">[0x00, 0x7f]</code>, le retour de l’encodage RLP de cet octet est <strong>lui même</strong>. Sinon, si une chaîne a une <strong>longueur de 0 à 55 octets</strong>, le retour de l’encodage RLP consiste en un <strong>seul octet de valeur <code class="language-plaintext highlighter-rouge">0x80</code> plus la longueur de la chaîne suivie de la chaîne</strong>. La plage du premier octet est donc <code class="language-plaintext highlighter-rouge">[0x80, 0xb7]</code>.</li>
+  <li>Si une chaîne a une longueur de <strong>plus de 55 octets</strong>, le retour de l’encodage RLP consiste en un <strong>seul octet de valeur <code class="language-plaintext highlighter-rouge">0xb7</code> plus la longueur en octets de la longueur de la chaîne sous forme binaire, suivie de la longueur de la chaîne, suivie de la chaîne</strong>. Par exemple, une chaîne de longueur 1024 serait codée sous la forme <code class="language-plaintext highlighter-rouge">"\xb9\x04\x00"</code> suivie de la chaîne. La plage du premier octet est donc <code class="language-plaintext highlighter-rouge">[0xb8, 0xbf]</code>.</li>
+  <li>Si la charge utile totale d’une liste (c’est-à-dire la longueur combinée de tous ses éléments codés en RLP) est comprise entre <strong>0 et 55 octets, le codage RLP consiste en un seul octet de valeur <code class="language-plaintext highlighter-rouge">0xc0</code> plus la longueur de la liste suivie de la concaténation du retour de l’encodages RLP des éléments</strong>. La plage du premier octet est donc <code class="language-plaintext highlighter-rouge">[0xc0, 0xf7]</code>.</li>
+  <li>Si la charge utile totale d’une liste est <strong>supérieure à 55 octets, le codage RLP consiste en un seul octet de valeur <code class="language-plaintext highlighter-rouge">0xf7</code> plus la longueur en octets de la longueur de la charge utile sous forme binaire, suivie de la longueur de la charge utile, suivie par la concaténation du retour de l’encodages RLP des éléments</strong>. La plage du premier octet est donc <code class="language-plaintext highlighter-rouge">[0xf8, 0xff]</code>.</li>
 </ol>
 
 <h2 id="script-dencodage-rlp-écrit-en-python">Script d’encodage RLP écrit en Python</h2>
@@ -344,8 +344,8 @@
 <h2 id="exemples-dencodage-rlp">Exemples d’encodage RLP:</h2>
 
 <ul>
-  <li><strong>Chaîne vide <code class="highlighter-rouge">""</code> = RLP =&gt; <code class="highlighter-rouge">['0x80']</code></strong> : La chaîne vide a une longueur égale à zéro. Du coup, pour encoder une chaîne vide on va passer à la deuxième partie de la première règle, c’est à dire: La longueur de la chaîne est comprise entre 0 et 55 octets, du coup on ajoute <code class="highlighter-rouge">0x80 + longueur d'une chaîne vide = 0x80</code></li>
-  <li><strong>Liste vide <code class="highlighter-rouge">[]</code>  = RLP =&gt; <code class="highlighter-rouge">['0xc0']</code></strong>: La liste vide a une longueur égale à zéro. Donc, on s’intéresser à cette partie du code:
+  <li><strong>Chaîne vide <code class="language-plaintext highlighter-rouge">""</code> = RLP =&gt; <code class="language-plaintext highlighter-rouge">['0x80']</code></strong> : La chaîne vide a une longueur égale à zéro. Du coup, pour encoder une chaîne vide on va passer à la deuxième partie de la première règle, c’est à dire: La longueur de la chaîne est comprise entre 0 et 55 octets, du coup on ajoute <code class="language-plaintext highlighter-rouge">0x80 + longueur d'une chaîne vide = 0x80</code></li>
+  <li><strong>Liste vide <code class="language-plaintext highlighter-rouge">[]</code>  = RLP =&gt; <code class="language-plaintext highlighter-rouge">['0xc0']</code></strong>: La liste vide a une longueur égale à zéro. Donc, on s’intéresser à cette partie du code:
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="nb">list</span><span class="p">):</span>
       <span class="n">output</span> <span class="o">=</span> <span class="s">''</span>
       <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">:</span> 
@@ -354,14 +354,14 @@
 </code></pre></div>    </div>
 
     <ul>
-      <li>Avec: <code class="highlighter-rouge">output = ''</code></li>
-      <li>Et <code class="highlighter-rouge">encode_length(len(output), 0xc0) + output</code></li>
-      <li>Qui va être égale à <code class="highlighter-rouge">encode_length(0, 0xc0) + ''</code></li>
-      <li>Qui est: <code class="highlighter-rouge">chr(0 + 0xc0)</code></li>
-      <li>Donc: <code class="highlighter-rouge">hex(ord(chr(0 + 0xc0)))</code> est égale à <code class="highlighter-rouge">hex(190)</code> = <code class="highlighter-rouge">'0xc0'</code></li>
+      <li>Avec: <code class="language-plaintext highlighter-rouge">output = ''</code></li>
+      <li>Et <code class="language-plaintext highlighter-rouge">encode_length(len(output), 0xc0) + output</code></li>
+      <li>Qui va être égale à <code class="language-plaintext highlighter-rouge">encode_length(0, 0xc0) + ''</code></li>
+      <li>Qui est: <code class="language-plaintext highlighter-rouge">chr(0 + 0xc0)</code></li>
+      <li>Donc: <code class="language-plaintext highlighter-rouge">hex(ord(chr(0 + 0xc0)))</code> est égale à <code class="language-plaintext highlighter-rouge">hex(190)</code> = <code class="language-plaintext highlighter-rouge">'0xc0'</code></li>
     </ul>
   </li>
-  <li><strong>La chaîne de caractère <code class="highlighter-rouge">"dog"</code> = RLP =&gt; <code class="highlighter-rouge">[0x83, 'd', 'o', 'g']</code></strong>: <code class="highlighter-rouge">"dog"</code> est une chaîne de caractères de longueur égale à 3 (<code class="highlighter-rouge">len([ord(k) for k in "dog"])</code> est égale à 3). Donc on ajoute un offset <code class="highlighter-rouge">hex(0x80 + 3)</code> qui est égale à <code class="highlighter-rouge">0x83</code> plus la chaîne elle même qui est :
+  <li><strong>La chaîne de caractère <code class="language-plaintext highlighter-rouge">"dog"</code> = RLP =&gt; <code class="language-plaintext highlighter-rouge">[0x83, 'd', 'o', 'g']</code></strong>: <code class="language-plaintext highlighter-rouge">"dog"</code> est une chaîne de caractères de longueur égale à 3 (<code class="language-plaintext highlighter-rouge">len([ord(k) for k in "dog"])</code> est égale à 3). Donc on ajoute un offset <code class="language-plaintext highlighter-rouge">hex(0x80 + 3)</code> qui est égale à <code class="language-plaintext highlighter-rouge">0x83</code> plus la chaîne elle même qui est :
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">$</span><span class="o">&gt;</span> <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="mh">0x80</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="s">"dog"</span><span class="p">)</span>
 <span class="p">[</span><span class="s">'0x83'</span><span class="p">,</span> <span class="s">'d'</span><span class="p">,</span> <span class="s">'o'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">]</span> 
 <span class="c1"># Ou en hexadécimal : 
@@ -369,7 +369,7 @@
 <span class="err">`</span><span class="p">[</span><span class="s">'0x83'</span><span class="p">,</span> <span class="s">'0x64'</span><span class="p">,</span> <span class="s">'0x6f'</span><span class="p">,</span> <span class="s">'0x67'</span><span class="p">]</span>
 </code></pre></div>    </div>
   </li>
-  <li><strong>La liste <code class="highlighter-rouge">["cat", "dog"]</code> = RLP =&gt; <code class="highlighter-rouge">[0xc8, 0x83, 'c', 'a', 't', 0x83, 'd', 'o', 'g']</code></strong>:</li>
+  <li><strong>La liste <code class="language-plaintext highlighter-rouge">["cat", "dog"]</code> = RLP =&gt; <code class="language-plaintext highlighter-rouge">[0xc8, 0x83, 'c', 'a', 't', 0x83, 'd', 'o', 'g']</code></strong>:</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># L'encodage RLP peut être traduit comme suit:
@@ -392,7 +392,7 @@
 </code></pre></div></div>
 
 <ul>
-  <li><strong>L’entier <code class="highlighter-rouge">15</code> = RLP =&gt; <code class="highlighter-rouge">[0x0f]</code></strong>:
+  <li><strong>L’entier <code class="language-plaintext highlighter-rouge">15</code> = RLP =&gt; <code class="language-plaintext highlighter-rouge">[0x0f]</code></strong>:
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># En effet, l'encodage en caractère de l'entier 15 est
 </span><span class="err">$</span><span class="o">&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 <span class="s">'</span><span class="se">\x0f</span><span class="s">'</span>
@@ -408,7 +408,7 @@
 </span><span class="p">[</span><span class="s">'</span><span class="se">\x0f</span><span class="s">`]</span><span class="err">
 </span></code></pre></div>    </div>
   </li>
-  <li><strong>L’enter <code class="highlighter-rouge">1024</code> = RLP =&gt; <code class="highlighter-rouge">[0x82, 0x04, 0x00]</code></strong>:</li>
+  <li><strong>L’enter <code class="language-plaintext highlighter-rouge">1024</code> = RLP =&gt; <code class="language-plaintext highlighter-rouge">[0x82, 0x04, 0x00]</code></strong>:</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># L'encodage RLP de 1024 peut être traduit comme suit:
@@ -431,7 +431,7 @@
 </code></pre></div></div>
 
 <ul>
-  <li><strong>La liste <code class="highlighter-rouge">[ [], [[]], [ [], [[]] ] ]</code> = RLP =&gt; <code class="highlighter-rouge">['0xc7', '0xc0', '0xc1', '0xc0', '0xc3', '0xc0', '0xc1', '0xc0']</code></strong>:</li>
+  <li><strong>La liste <code class="language-plaintext highlighter-rouge">[ [], [[]], [ [], [[]] ] ]</code> = RLP =&gt; <code class="language-plaintext highlighter-rouge">['0xc7', '0xc0', '0xc1', '0xc0', '0xc3', '0xc0', '0xc1', '0xc0']</code></strong>:</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Pour ce type complexe, on va essayer de le découper 
@@ -449,7 +449,7 @@
 </code></pre></div></div>
 
 <ul>
-  <li>**La chaîne <code class="highlighter-rouge">"Lorem ipsum dolor sit amet, consectetur adipisicing elit"</code> = RLP =&gt; <code class="highlighter-rouge">['0xb8', '0x38', '0x4c', '0x6f', ..., '0x6c', '0x69', '0x74']</code>:</li>
+  <li>**La chaîne <code class="language-plaintext highlighter-rouge">"Lorem ipsum dolor sit amet, consectetur adipisicing elit"</code> = RLP =&gt; <code class="language-plaintext highlighter-rouge">['0xb8', '0x38', '0x4c', '0x6f', ..., '0x6c', '0x69', '0x74']</code>:</li>
 </ul>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># La longueur de la chaîne est:
@@ -467,12 +467,12 @@
 <ul>
   <li>Un dernier exemple, les booléens sont encodés en RLP comme suit:
     <ul>
-      <li><code class="highlighter-rouge">true</code> = RLP =&gt; <code class="highlighter-rouge">0x01</code> : est évaluée comme l’entier <code class="highlighter-rouge">1</code> représenté en <code class="highlighter-rouge">0x01</code>
+      <li><code class="language-plaintext highlighter-rouge">true</code> = RLP =&gt; <code class="language-plaintext highlighter-rouge">0x01</code> : est évaluée comme l’entier <code class="language-plaintext highlighter-rouge">1</code> représenté en <code class="language-plaintext highlighter-rouge">0x01</code>
         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="err">$</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s">'big'</span><span class="p">)</span>
   <span class="n">b</span><span class="s">'</span><span class="se">\x01</span><span class="s">'</span>
 </code></pre></div>        </div>
       </li>
-      <li><code class="highlighter-rouge">false</code> = RLP =&gt; <code class="highlighter-rouge">0x80</code> : est évaluée comme la valeur <code class="highlighter-rouge">null</code> (chaîne vide)</li>
+      <li><code class="language-plaintext highlighter-rouge">false</code> = RLP =&gt; <code class="language-plaintext highlighter-rouge">0x80</code> : est évaluée comme la valeur <code class="language-plaintext highlighter-rouge">null</code> (chaîne vide)</li>
     </ul>
   </li>
 </ul>
@@ -480,9 +480,9 @@
 <p>Donc, au final, selon la documentation d’ethereum le premier octet (byte) des données encodées représente le type de l’objet encodé en RLP, c’est à dire si le premier byte est dans la rangée:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">[0x00, 0x7f]</code>: C’est un byte</li>
-  <li><code class="highlighter-rouge">[0x80, 0xbf]</code>: C’est une chaîne de caractère</li>
-  <li><code class="highlighter-rouge">[0xc0, 0xff]</code>: C’est une liste</li>
+  <li><code class="language-plaintext highlighter-rouge">[0x00, 0x7f]</code>: C’est un byte</li>
+  <li><code class="language-plaintext highlighter-rouge">[0x80, 0xbf]</code>: C’est une chaîne de caractère</li>
+  <li><code class="language-plaintext highlighter-rouge">[0xc0, 0xff]</code>: C’est une liste</li>
 </ul>
 
 <p>Et c’est ainsi, qu’on peut décoder les données en RLP. Vous pouvez suivre les étapes de décodage sur ce <a href="https://github.com/ethereum/wiki/wiki/RLP#rlp-decoding">lien</a> et peut être je ferai un autre article expliquant comment faire pour décoder des données en RLP.</p>
@@ -491,7 +491,7 @@
 
 <p>La réponse peut être simple, mais essayez de méditer dessus:</p>
 
-<p><strong><code class="highlighter-rouge">Efficacité, plus d'espace de stockage, anonymat et parce qu'on peut le faire :D</code></strong></p>
+<p><strong><code class="language-plaintext highlighter-rouge">Efficacité, plus d'espace de stockage, anonymat et parce qu'on peut le faire :D</code></strong></p>
 
 <p><img src="http://wallpaperen.com/wp-content/uploads/2017/12/deluxe-we-are-done-meme-we-are-number-one-all-others-are-number-two-or-lower-we-are-done-meme.jpg" /></p>
 

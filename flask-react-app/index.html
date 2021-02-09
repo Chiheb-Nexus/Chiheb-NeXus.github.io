@@ -270,16 +270,16 @@
 
 <p>Le monde du développent des sites web est tellement vaste que chaque jour nous, les développeurs, sommes amenés à utiliser/apprendre des nouvelles technologies.
 La tendance à la mode, aujourd’hui, c’est du faire des SPA (Single Page Application) en utilisant, généralement, React, Angular et VueJS (je note aussi Svelte) frameworks.
-Cependant, comme étant un développeur Python à la base, j’ai cherché sur net un tutoriel qui étale comment on devra procéder pour créer un site web en utilisant <code class="highlighter-rouge">Flask</code> et <code class="highlighter-rouge">React</code>.</p>
+Cependant, comme étant un développeur Python à la base, j’ai cherché sur net un tutoriel qui étale comment on devra procéder pour créer un site web en utilisant <code class="language-plaintext highlighter-rouge">Flask</code> et <code class="language-plaintext highlighter-rouge">React</code>.</p>
 
-<p>Hélas, tout ce que j’ai trouvé ce sont soi des tutoriels qui utilisent deux serveurs web l’un pour <code class="highlighter-rouge">Flask</code> et l’autre pour <code class="highlighter-rouge">React</code> et que dans le passage en <code class="highlighter-rouge">PROD</code> on devra simuler le meme environnement, ou bien des tutoriels qui fonctionnent pas.</p>
+<p>Hélas, tout ce que j’ai trouvé ce sont soi des tutoriels qui utilisent deux serveurs web l’un pour <code class="language-plaintext highlighter-rouge">Flask</code> et l’autre pour <code class="language-plaintext highlighter-rouge">React</code> et que dans le passage en <code class="language-plaintext highlighter-rouge">PROD</code> on devra simuler le meme environnement, ou bien des tutoriels qui fonctionnent pas.</p>
 
 <p>Pour moi, ce genre d’approche n’est pas la bonne, à vous de voir si ça vous convient ou pas. Mais personnellement je ne veux pas gérer deux environnements différents et surtout ne pas gérer deux serveurs web différents.
-C’est pour cela je me suis dit qu’il est temps que j’écris ce tutoriel pour vous montrer une autre approche d’utilisation de ces frameworks pour faire du SPA et les intégrer avec une app <code class="highlighter-rouge">Flask</code> et servir le tour dans un seul environnement et surtout avec un seul serveur web.</p>
+C’est pour cela je me suis dit qu’il est temps que j’écris ce tutoriel pour vous montrer une autre approche d’utilisation de ces frameworks pour faire du SPA et les intégrer avec une app <code class="language-plaintext highlighter-rouge">Flask</code> et servir le tour dans un seul environnement et surtout avec un seul serveur web.</p>
 
 <h2 id="installation">Installation</h2>
 
-<p>Pour commencer, on va créer un <code class="highlighter-rouge">virtalenv</code> pour notre app en <code class="highlighter-rouge">Flask</code>:</p>
+<p>Pour commencer, on va créer un <code class="language-plaintext highlighter-rouge">virtalenv</code> pour notre app en <code class="language-plaintext highlighter-rouge">Flask</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> <span class="nb">mkdir </span>flask_react
 <span class="nv">$&gt;</span> <span class="nb">cd </span>flask_react
@@ -289,12 +289,12 @@ C’est pour cela je me suis dit qu’il est temps que j’écris ce tutoriel po
 <span class="o">(</span>venv<span class="o">)</span><span class="nv">$&gt;</span>
 </code></pre></div></div>
 
-<p>Ensuite on doit installer <code class="highlighter-rouge">NodeJS</code>, <code class="highlighter-rouge">NPM (&gt;=v8)</code> <a href="https://create-react-app.dev/docs/getting-started/">React app</a> et <code class="highlighter-rouge">Webpack</code>:</p>
+<p>Ensuite on doit installer <code class="language-plaintext highlighter-rouge">NodeJS</code>, <code class="language-plaintext highlighter-rouge">NPM (&gt;=v8)</code> <a href="https://create-react-app.dev/docs/getting-started/">React app</a> et <code class="language-plaintext highlighter-rouge">Webpack</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>venv<span class="o">)</span><span class="nv">$&gt;</span> npm init react-app frontend
 </code></pre></div></div>
 
-<p>Ensuite on va installer <code class="highlighter-rouge">Webpack</code> et <code class="highlighter-rouge">Webpack-cli</code>:</p>
+<p>Ensuite on va installer <code class="language-plaintext highlighter-rouge">Webpack</code> et <code class="language-plaintext highlighter-rouge">Webpack-cli</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>venv<span class="o">)</span><span class="nv">$&gt;</span> <span class="nb">cd </span>frontend
 <span class="o">(</span>venv<span class="o">)</span><span class="nv">$&gt;</span> npm <span class="nb">install</span> <span class="nt">--save-dev</span> webpack
@@ -302,7 +302,7 @@ C’est pour cela je me suis dit qu’il est temps que j’écris ce tutoriel po
 <span class="o">(</span>venv<span class="o">)</span><span class="nv">$&gt;</span> npm i @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties <span class="nt">--save-dev</span>
 </code></pre></div></div>
 
-<p>Maintenant, nous devons modifier le fichier <code class="highlighter-rouge">packages.json</code> comme suit:</p>
+<p>Maintenant, nous devons modifier le fichier <code class="language-plaintext highlighter-rouge">packages.json</code> comme suit:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"dev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webpack --mode development ./src/index.js --output ./compiled/bundles.js"</span><span class="p">,</span><span class="w">
@@ -311,7 +311,7 @@ C’est pour cela je me suis dit qu’il est temps que j’écris ce tutoriel po
   </span><span class="p">},</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Et ajouter un fichier <code class="highlighter-rouge">.babelrc</code> avec ce contenu:</p>
+<p>Et ajouter un fichier <code class="language-plaintext highlighter-rouge">.babelrc</code> avec ce contenu:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"presets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -323,14 +323,14 @@ C’est pour cela je me suis dit qu’il est temps que j’écris ce tutoriel po
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Ensuite installer <code class="highlighter-rouge">Webpack live reload plugin</code>, <code class="highlighter-rouge">CSS loader</code> et <code class="highlighter-rouge">SVG loader pour React</code>:</p>
+<p>Ensuite installer <code class="language-plaintext highlighter-rouge">Webpack live reload plugin</code>, <code class="language-plaintext highlighter-rouge">CSS loader</code> et <code class="language-plaintext highlighter-rouge">SVG loader pour React</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>venv<span class="o">)</span><span class="nv">$&gt;</span> npm <span class="nb">install</span> <span class="nt">--save-dev</span> webpack-livereload-plugin
 <span class="o">(</span>venv<span class="o">)</span><span class="nv">$&gt;</span> npm <span class="nb">install</span> <span class="nt">--save-dev</span> css-loader
 <span class="o">(</span>venv<span class="o">)</span><span class="nv">$&gt;</span> npm <span class="nb">install </span>svg-inline-loader react-inlinesvg <span class="nt">--save-dev</span>
 </code></pre></div></div>
 
-<p>Finalement, on doit ajouter un fichier nommé <code class="highlighter-rouge">webpack.config.js</code> et on ajoute dedans:</p>
+<p>Finalement, on doit ajouter un fichier nommé <code class="language-plaintext highlighter-rouge">webpack.config.js</code> et on ajoute dedans:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">var</span><span class="w"> </span><span class="err">LiveReloadPlugin</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">require('webpack-livereload-plugin');</span><span class="w">
 
@@ -363,10 +363,10 @@ C’est pour cela je me suis dit qu’il est temps que j’écris ce tutoriel po
   </span><span class="p">}</span><span class="err">;</span><span class="w">
 </span></code></pre></div></div>
 
-<h2 id="ajouter-le-bundlejs-à-notre-flask-app">Ajouter le <code class="highlighter-rouge">bundle.js</code> à notre <code class="highlighter-rouge">Flask</code> app</h2>
+<h2 id="ajouter-le-bundlejs-à-notre-flask-app">Ajouter le <code class="language-plaintext highlighter-rouge">bundle.js</code> à notre <code class="language-plaintext highlighter-rouge">Flask</code> app</h2>
 
-<p>À ce niveau on a configuré <code class="highlighter-rouge">React</code> et <code class="highlighter-rouge">Webpack</code>, ce qu’il nous reste à faire c’est de configurer <code class="highlighter-rouge">Flask</code> pour qu’il puisse lire le fichier <code class="highlighter-rouge">JS</code> compilé et l’ajouter comme un fichier statique à <code class="highlighter-rouge">index.html</code>.
-Pour le faire, on va modifier un peu le fichier <code class="highlighter-rouge">public/index.html</code> comme suit:</p>
+<p>À ce niveau on a configuré <code class="language-plaintext highlighter-rouge">React</code> et <code class="language-plaintext highlighter-rouge">Webpack</code>, ce qu’il nous reste à faire c’est de configurer <code class="language-plaintext highlighter-rouge">Flask</code> pour qu’il puisse lire le fichier <code class="language-plaintext highlighter-rouge">JS</code> compilé et l’ajouter comme un fichier statique à <code class="language-plaintext highlighter-rouge">index.html</code>.
+Pour le faire, on va modifier un peu le fichier <code class="language-plaintext highlighter-rouge">public/index.html</code> comme suit:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -393,7 +393,7 @@ Pour le faire, on va modifier un peu le fichier <code class="highlighter-rouge">
 
 </code></pre></div></div>
 
-<p><strong>PS:</strong> Vous pouvez avoir du mal à faire le bon rendu des images <code class="highlighter-rouge">SVG</code>, c’est pourquoi je vous conseil de modifier le fichier <code class="highlighter-rouge">src/index.js</code> et utiliser le tag <code class="highlighter-rouge">SVG</code> via le paquet <code class="highlighter-rouge">svg-inline-loader</code> comme suit:</p>
+<p><strong>PS:</strong> Vous pouvez avoir du mal à faire le bon rendu des images <code class="language-plaintext highlighter-rouge">SVG</code>, c’est pourquoi je vous conseil de modifier le fichier <code class="language-plaintext highlighter-rouge">src/index.js</code> et utiliser le tag <code class="language-plaintext highlighter-rouge">SVG</code> via le paquet <code class="language-plaintext highlighter-rouge">svg-inline-loader</code> comme suit:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React from 'react';
 import logo from './logo.svg';
@@ -463,18 +463,18 @@ export default App;
 
 <h2 id="tout-exécuter">Tout exécuter!</h2>
 
-<p>Pour exécuter ce tutoriel vous avez 3 modes avec <code class="highlighter-rouge">NPM</code> et 2 modes avec <code class="highlighter-rouge">Flask</code>.
-Dans, le fichier <code class="highlighter-rouge">packages.json</code> on a spécifié 3 modes qui sont:</p>
+<p>Pour exécuter ce tutoriel vous avez 3 modes avec <code class="language-plaintext highlighter-rouge">NPM</code> et 2 modes avec <code class="language-plaintext highlighter-rouge">Flask</code>.
+Dans, le fichier <code class="language-plaintext highlighter-rouge">packages.json</code> on a spécifié 3 modes qui sont:</p>
 
 <ul>
   <li><strong>dev</strong>: Mode développent</li>
   <li><strong>build</strong>: Mode Production</li>
-  <li><strong>watch</strong>: Mode développent avec le <code class="highlighter-rouge">live reload</code> des changements au niveau de <code class="highlighter-rouge">React</code></li>
+  <li><strong>watch</strong>: Mode développent avec le <code class="language-plaintext highlighter-rouge">live reload</code> des changements au niveau de <code class="language-plaintext highlighter-rouge">React</code></li>
 </ul>
 
-<p>Et au niveay de <code class="highlighter-rouge">Flask</code>, on a deux modes selon la valeur de la variable <code class="highlighter-rouge">DEBUG</code>.</p>
+<p>Et au niveay de <code class="language-plaintext highlighter-rouge">Flask</code>, on a deux modes selon la valeur de la variable <code class="language-plaintext highlighter-rouge">DEBUG</code>.</p>
 
-<p>Ceci dit, en mode de <strong>développent pur</strong> on pourra lancer 2 terminales: Une terminale qui lance le mode <code class="highlighter-rouge">watch</code> de l’app en React et l’autre lance le serveur de développent de Flask en mode DEBUG.</p>
+<p>Ceci dit, en mode de <strong>développent pur</strong> on pourra lancer 2 terminales: Une terminale qui lance le mode <code class="language-plaintext highlighter-rouge">watch</code> de l’app en React et l’autre lance le serveur de développent de Flask en mode DEBUG.</p>
 
 <p>En gros:</p>
 
@@ -485,12 +485,12 @@ Dans, le fichier <code class="highlighter-rouge">packages.json</code> on a spéc
 <span class="o">(</span>venv<span class="o">)</span><span class="nv">$&gt;</span> npm run watch
 </code></pre></div></div>
 
-<p>Par contre en mode de <code class="highlighter-rouge">Production</code>, ce qu’on a à faire c’est juste lancer:</p>
+<p>Par contre en mode de <code class="language-plaintext highlighter-rouge">Production</code>, ce qu’on a à faire c’est juste lancer:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>venv<span class="o">)</span><span class="nv">$&gt;</span> npm build
 </code></pre></div></div>
 
-<p>Et ensuite servir notre application <code class="highlighter-rouge">Flask</code> avec <code class="highlighter-rouge">Gunicorn</code> ou autre en se servant du fichier <code class="highlighter-rouge">React/JavaScript</code> compilé <code class="highlighter-rouge">frontend/compiled/bundles.js</code>.</p>
+<p>Et ensuite servir notre application <code class="language-plaintext highlighter-rouge">Flask</code> avec <code class="language-plaintext highlighter-rouge">Gunicorn</code> ou autre en se servant du fichier <code class="language-plaintext highlighter-rouge">React/JavaScript</code> compilé <code class="language-plaintext highlighter-rouge">frontend/compiled/bundles.js</code>.</p>
 
 <p><img src="https://trashtalk.co/wp-content/uploads/2019/04/thats-all-folks-907x510.jpg" /></p>
 

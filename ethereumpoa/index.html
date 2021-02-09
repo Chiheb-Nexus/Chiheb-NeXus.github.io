@@ -276,13 +276,13 @@
 
 <h2 id="comment-monter-notre-propre-chaîne-avec-le-consensus-poa-">Comment monter notre propre chaîne avec le consensus POA ?</h2>
 
-<p><strong>Buts de ce tutoriel:</strong> Créer deux noeuds, en utilsant Geth, qui vont servire de <code class="highlighter-rouge">validateurs</code> de notre blockchain privée d’Ethereum. Et on va monter un bootnode qui va servir de service de découverte (discovery service). Et le tout formera un réseau d’Ethereum privé en P2P (Peer to Peer).</p>
+<p><strong>Buts de ce tutoriel:</strong> Créer deux noeuds, en utilsant Geth, qui vont servire de <code class="language-plaintext highlighter-rouge">validateurs</code> de notre blockchain privée d’Ethereum. Et on va monter un bootnode qui va servir de service de découverte (discovery service). Et le tout formera un réseau d’Ethereum privé en P2P (Peer to Peer).</p>
 
 <p>Avant de continuer la lecture, je tiens à vous inviter à lire la proposition <a href="https://github.com/ethereum/EIPs/issues/225">EIP255</a> qui a fait naître la possibilité d’intégrer la POA avec la blockchain d’Ethereum déjà existante.</p>
 
 <p><img src="https://mightynotes.files.wordpress.com/2017/03/challenge-accepted-meme.jpg?w=437&amp;h=273" /></p>
 
-<p>Dans ce tutoriel, je vais utiliser <code class="highlighter-rouge">Geth v1.7.3</code>, vous pouvez l’installer en visitant ce <a href="https://github.com/ethereum/go-ethereum/releases">lien</a>:</p>
+<p>Dans ce tutoriel, je vais utiliser <code class="language-plaintext highlighter-rouge">Geth v1.7.3</code>, vous pouvez l’installer en visitant ce <a href="https://github.com/ethereum/go-ethereum/releases">lien</a>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> geth version
 Geth
@@ -297,7 +297,7 @@ Operating System: linux
 <span class="nv">GOROOT</span><span class="o">=</span>/usr/user/go
 </code></pre></div></div>
 
-<p><strong>PS</strong>: Si vous utilisez Ubuntu 16.04+ ou une distribution dérivée d’Ubuntu, vous pouvez télécharger <code class="highlighter-rouge">Geth</code> en ajoutant le PPA d’Ethereum [Pour plus d’informations, veuillez visiter ce <a href="https://geth.ethereum.org/install/">lien</a>]:</p>
+<p><strong>PS</strong>: Si vous utilisez Ubuntu 16.04+ ou une distribution dérivée d’Ubuntu, vous pouvez télécharger <code class="language-plaintext highlighter-rouge">Geth</code> en ajoutant le PPA d’Ethereum [Pour plus d’informations, veuillez visiter ce <a href="https://geth.ethereum.org/install/">lien</a>]:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> <span class="nb">sudo </span>apt update
 <span class="nv">$&gt;</span> <span class="nb">sudo </span>add-apt-repository <span class="nt">-y</span> ppa:ethereum/ethereum
@@ -313,7 +313,7 @@ Operating System: linux
 <span class="nv">$&gt;</span> <span class="nb">mkdir </span>node1 node2
 </code></pre></div></div>
 
-<p>Ensuite, on va créer des comptes Ethereum avec <code class="highlighter-rouge">Geth</code> pour les noeuds 1 et 2:</p>
+<p>Ensuite, on va créer des comptes Ethereum avec <code class="language-plaintext highlighter-rouge">Geth</code> pour les noeuds 1 et 2:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> geth <span class="nt">--datadir</span> node1/ account new
 Your new account is locked with a password. Please give a password. Do not forget this password.
@@ -329,31 +329,31 @@ Repeat passphrase: <span class="c"># ici on écrit le mot de passe pour le compt
 Address: <span class="o">{</span>bbb6abec9f9b6d0e7d3ff18bcb68ce6ac931478f<span class="o">}</span> <span class="c"># adresse publique du compte n°2</span>
 </code></pre></div></div>
 
-<p>Ces commandes vont créer un nouveau dossier sous chacun des dossiers <code class="highlighter-rouge">node1</code> et <code class="highlighter-rouge">node2</code> nommé <code class="highlighter-rouge">keystore</code> qui va contenir un fichier qui va servir du compte ethereum pour le noeud n°1 et le noeud n°2.</p>
+<p>Ces commandes vont créer un nouveau dossier sous chacun des dossiers <code class="language-plaintext highlighter-rouge">node1</code> et <code class="language-plaintext highlighter-rouge">node2</code> nommé <code class="language-plaintext highlighter-rouge">keystore</code> qui va contenir un fichier qui va servir du compte ethereum pour le noeud n°1 et le noeud n°2.</p>
 
-<p>À ce niveau, copions les deux adresses publiques, générées par <code class="highlighter-rouge">Geth</code>, dans un nouveau fichier nommé <code class="highlighter-rouge">accounts </code>:</p>
+<p>À ce niveau, copions les deux adresses publiques, générées par <code class="language-plaintext highlighter-rouge">Geth</code>, dans un nouveau fichier nommé <code class="language-plaintext highlighter-rouge">accounts </code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"2d299ed001270f8c2f02abdda2bda4e5b4cca348"</span> <span class="o">&gt;&gt;</span> accounts
 <span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"bbb6abec9f9b6d0e7d3ff18bcb68ce6ac931478f"</span> <span class="o">&gt;&gt;</span> accounts
 </code></pre></div></div>
 
-<p>Et écrivons les mots de passes de chaque compte de chaque noeud dans un fichier nommé <code class="highlighter-rouge">password</code> sous chaque dossier de chaque noeud:</p>
+<p>Et écrivons les mots de passes de chaque compte de chaque noeud dans un fichier nommé <code class="language-plaintext highlighter-rouge">password</code> sous chaque dossier de chaque noeud:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"node1 password"</span> <span class="o">&gt;</span> node1/password
 <span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"node2 password"</span> <span class="o">&gt;</span> node2/password
 </code></pre></div></div>
 
-<p>Miantenant, créons le fichier <code class="highlighter-rouge">Genesis</code> qui va servir à initier notre nouvelle blockchain privée (pour plus d’informations sur le <code class="highlighter-rouge">Genesis block</code> veuillez visiter ce <a href="https://en.bitcoin.it/wiki/Genesis_block">lien</a>)</p>
+<p>Miantenant, créons le fichier <code class="language-plaintext highlighter-rouge">Genesis</code> qui va servir à initier notre nouvelle blockchain privée (pour plus d’informations sur le <code class="language-plaintext highlighter-rouge">Genesis block</code> veuillez visiter ce <a href="https://en.bitcoin.it/wiki/Genesis_block">lien</a>)</p>
 
-<p>Pour ne pas compliquer les choses, <code class="highlighter-rouge">Geth</code> vient avec un exécutable nommé <code class="highlighter-rouge">puppeth</code> qui facilite la création des fichier <code class="highlighter-rouge">Genesis</code> qui vont initier les nouvelles blockchain privées.</p>
+<p>Pour ne pas compliquer les choses, <code class="language-plaintext highlighter-rouge">Geth</code> vient avec un exécutable nommé <code class="language-plaintext highlighter-rouge">puppeth</code> qui facilite la création des fichier <code class="language-plaintext highlighter-rouge">Genesis</code> qui vont initier les nouvelles blockchain privées.</p>
 
-<p><strong>PS:</strong> Si vous ne trouvez pas l’exécutable <code class="highlighter-rouge">puppeth</code>, vous pouvez l’installer via le PPA d’ethereum qu’on a vu au début de ce tutoriel:</p>
+<p><strong>PS:</strong> Si vous ne trouvez pas l’exécutable <code class="language-plaintext highlighter-rouge">puppeth</code>, vous pouvez l’installer via le PPA d’ethereum qu’on a vu au début de ce tutoriel:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> <span class="nb">sudo </span>apt update
 <span class="nv">$&gt;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>puppeth
 </code></pre></div></div>
 
-<p>À ce niveau, créons le fichier <code class="highlighter-rouge">Genesis</code>:</p>
+<p>À ce niveau, créons le fichier <code class="language-plaintext highlighter-rouge">Genesis</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> puppeth
 +-----------------------------------------------------------+
@@ -445,7 +445,7 @@ What would you like to <span class="k">do</span>? <span class="o">(</span>defaul
 4 directories, 4 files
 </code></pre></div></div>
 
-<p>Et le contenu du fichier <code class="highlighter-rouge">NexusNetwork.json</code> est:</p>
+<p>Et le contenu du fichier <code class="language-plaintext highlighter-rouge">NexusNetwork.json</code> est:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> <span class="nb">cat </span>NexusNetwork.json 
 <span class="o">{</span>
@@ -486,7 +486,7 @@ What would you like to <span class="k">do</span>? <span class="o">(</span>defaul
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>Ceci dit, initions nos noeuds avec le nouveau fichier <code class="highlighter-rouge">Genesis</code>:</p>
+<p>Ceci dit, initions nos noeuds avec le nouveau fichier <code class="language-plaintext highlighter-rouge">Genesis</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> geth <span class="nt">--datadir</span> node1/ init NexusNetwork.json 
 INFO <span class="o">[</span>05-29|14:10:14] Allocated cache and file handles         <span class="nv">database</span><span class="o">=</span>/home/user/test_poa/node1/geth/chaindata <span class="nv">cache</span><span class="o">=</span>16 <span class="nv">handles</span><span class="o">=</span>16
@@ -505,13 +505,13 @@ INFO <span class="o">[</span>05-29|14:10:20] Writing custom genesis block
 INFO <span class="o">[</span>05-29|14:10:20] Successfully wrote genesis state         <span class="nv">database</span><span class="o">=</span>lightchaindata 
 </code></pre></div></div>
 
-<p>Puis, créons un <code class="highlighter-rouge">boot.key</code> en utilisant <code class="highlighter-rouge">bootnode</code> un exécutable trouvé dans le projet <code class="highlighter-rouge">Geth</code> et si cet exécutable est manquant, vous pouvez le télécharger via les dépôts du PPA d’Ethereum ajouté au début de l’article:</p>
+<p>Puis, créons un <code class="language-plaintext highlighter-rouge">boot.key</code> en utilisant <code class="language-plaintext highlighter-rouge">bootnode</code> un exécutable trouvé dans le projet <code class="language-plaintext highlighter-rouge">Geth</code> et si cet exécutable est manquant, vous pouvez le télécharger via les dépôts du PPA d’Ethereum ajouté au début de l’article:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> <span class="nb">sudo </span>apt update
 <span class="nv">$&gt;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>bootnode
 </code></pre></div></div>
 
-<p>Et la génération du <code class="highlighter-rouge">boot.key</code>:</p>
+<p>Et la génération du <code class="language-plaintext highlighter-rouge">boot.key</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> bootnode <span class="nt">-genkey</span> boot.key
 <span class="nv">$&gt;</span> <span class="nb">cat </span>boot.key 
@@ -553,7 +553,7 @@ INFO <span class="o">[</span>05-29|14:16:50] UDP listener up                    
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$&gt;</span> geth <span class="nt">--datadir</span> node1/ <span class="nt">--syncmode</span> <span class="s1">'full'</span> <span class="nt">--port</span> 30311 <span class="nt">--rpc</span> <span class="nt">--rpcaddr</span> <span class="s1">'localhost'</span> <span class="nt">--rpcport</span> 8501 <span class="nt">--rpcapi</span> <span class="s1">'personal,db,eth,web3,txpool,miner'</span> <span class="nt">--bootnodes</span> <span class="s1">'enode://393fafe1972bb56d3743a7d0d5590c113c357348815f10b8d970ffa3919b71be734abf8ebeff2eb2921eee305ba4c2fefbbd79ef3a69e4a78750491da3824d78@127.0.0.1:30310'</span> <span class="nt">-networkid</span> 9999 <span class="nt">--gasprice</span> <span class="s1">'1'</span> <span class="nt">--unlock</span> <span class="s1">'2d299ed001270f8c2f02abdda2bda4e5b4cca348'</span> <span class="nt">--password</span> node1/password <span class="nt">--mine</span>
 </code></pre></div></div>
 
-<p>En ouvrant la terminale qu’on a utilisé pour exécuter notre bootnode, on va constater que le deux noeuds sont activées vu que les adresses <code class="highlighter-rouge">127.0.0.1:30311</code> et <code class="highlighter-rouge">127.0.0.1:30312</code> sont activées:</p>
+<p>En ouvrant la terminale qu’on a utilisé pour exécuter notre bootnode, on va constater que le deux noeuds sont activées vu que les adresses <code class="language-plaintext highlighter-rouge">127.0.0.1:30311</code> et <code class="language-plaintext highlighter-rouge">127.0.0.1:30312</code> sont activées:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TRACE[05-29|14:28:25] <span class="o">&gt;&gt;</span> NEIGHBORS/v4                          <span class="nv">addr</span><span class="o">=</span>127.0.0.1:30311 <span class="nv">err</span><span class="o">=</span>nil
 TRACE[05-29|14:28:25] <span class="o">&lt;&lt;</span> <span class="no">FINDNODE</span><span class="sh">/v4                           addr=127.0.0.1:30311 err=nil
@@ -561,7 +561,7 @@ TRACE[05-29|14:28:25] &gt;&gt; PING/v4                               addr=127.0.
 TRACE[05-29|14:28:25] &lt;&lt; PONG/v4                               addr=127.0.0.1:30312 err=nil
 </span></code></pre></div></div>
 
-<p>Et en ouvrant une autre terminale pour voir la nouvelle arboraissance du projet quand les noeuds et le bootnode sont activés, on va remarquer la génération de deux nouveaux fichiers <code class="highlighter-rouge">geth.ipc</code> qui vont servire à activer la communication <code class="highlighter-rouge">IPC</code> avec notre nouvelle blockchain:</p>
+<p>Et en ouvrant une autre terminale pour voir la nouvelle arboraissance du projet quand les noeuds et le bootnode sont activés, on va remarquer la génération de deux nouveaux fichiers <code class="language-plaintext highlighter-rouge">geth.ipc</code> qui vont servire à activer la communication <code class="language-plaintext highlighter-rouge">IPC</code> avec notre nouvelle blockchain:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree <span class="nt">-L</span> 2
 <span class="nb">.</span>
@@ -582,7 +582,7 @@ TRACE[05-29|14:28:25] &lt;&lt; PONG/v4                               addr=127.0.
 6 directories, 7 files
 </code></pre></div></div>
 
-<p>Essayons d’activer la console JavaScript de Geth en utilisant <code class="highlighter-rouge">IPC</code> comme moyen de communication:</p>
+<p>Essayons d’activer la console JavaScript de Geth en utilisant <code class="language-plaintext highlighter-rouge">IPC</code> comme moyen de communication:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>geth attach node1/geth.ipc 
 Welcome to the Geth JavaScript console!
@@ -596,7 +596,7 @@ at block: 80 <span class="o">(</span>Tue, 29 May 2018 14:32:08 CET<span class="o
 <span class="o">&gt;</span> <span class="c"># Console activée avec succès !</span>
 </code></pre></div></div>
 
-<p>De même essayons d’activer la console JavaScript de Geth en utilsant le protocole <code class="highlighter-rouge">RPC/HTTP</code> comme moyen de communication:</p>
+<p>De même essayons d’activer la console JavaScript de Geth en utilsant le protocole <code class="language-plaintext highlighter-rouge">RPC/HTTP</code> comme moyen de communication:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>geth attach <span class="s1">'http://localhost:8501'</span>
 Welcome to the Geth JavaScript console!
@@ -609,7 +609,7 @@ at block: 104 <span class="o">(</span>Tue, 29 May 2018 14:33:20 CET<span class="
 <span class="o">&gt;</span> <span class="c"># Console activée avec succès !</span>
 </code></pre></div></div>
 
-<p><strong>PS:</strong> On peut noter que Geth nous dise qu’il a ouvert le port <code class="highlighter-rouge">8501 pour la communication RPC/HTTP</code> et le endpoint <code class="highlighter-rouge">IPC</code> pour une interaction avec ses fonctionnalités. Par exemple dans le noeud n°1 en lançant les commandes en dessus on peut constater ce message:</p>
+<p><strong>PS:</strong> On peut noter que Geth nous dise qu’il a ouvert le port <code class="language-plaintext highlighter-rouge">8501 pour la communication RPC/HTTP</code> et le endpoint <code class="language-plaintext highlighter-rouge">IPC</code> pour une interaction avec ses fonctionnalités. Par exemple dans le noeud n°1 en lançant les commandes en dessus on peut constater ce message:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INFO <span class="o">[</span>05-29|14:24:21] IPC endpoint opened: /home/user/test_poa/node1/geth.ipc 
 INFO <span class="o">[</span>05-29|14:24:21] HTTP endpoint opened: http://localhost:8501 
@@ -651,7 +651,7 @@ at block: 136 <span class="o">(</span>Tue, 29 May 2018 14:35:29 CET<span class="
 <span class="o">&gt;</span> <span class="nb">exit</span>
 </code></pre></div></div>
 
-<p>De la même façon, essayons de comminiquer avec notre nouvelle blockchain en utilisant <code class="highlighter-rouge">Python et web3(v4.2.1)</code>:</p>
+<p>De la même façon, essayons de comminiquer avec notre nouvelle blockchain en utilisant <code class="language-plaintext highlighter-rouge">Python et web3(v4.2.1)</code>:</p>
 
 <p><strong>PS</strong>: Veuillez visiter ce <a href="http://web3py.readthedocs.io/en/stable/middleware.html#geth-style-proof-of-authority">lien</a> pour activer le middleware qui va faciliter la communication avec notre nouvelle blockchain avec le consensus POA.</p>
 
@@ -671,7 +671,7 @@ at block: 136 <span class="o">(</span>Tue, 29 May 2018 14:35:29 CET<span class="
 <span class="n">Decimal</span><span class="p">(</span><span class="s">'904625697166532776746648320380374280103671755200316906557.262375061821304312'</span><span class="p">)</span> <span class="c1"># en ether
 </span></code></pre></div></div>
 
-<p><strong>Au final:</strong> On a pu créer une blockchain privée d’ethereum avec le consensus POA qui peut nous être utile pour le cas où on cherche à créer un réseau blockchain <code class="highlighter-rouge">sans GAS/sans frais de transaction</code> ou avec des frais moins élevés ou bien en montant des noeuds spécifiques qui seront les seuls participants de confiance du réseau et bien sûr l’un des atouts du POA c’est qu’il n’utilise pas des réssources énormes pour la validation des blocs (à l’instar du consensus POW, Proof Of Work).</p>
+<p><strong>Au final:</strong> On a pu créer une blockchain privée d’ethereum avec le consensus POA qui peut nous être utile pour le cas où on cherche à créer un réseau blockchain <code class="language-plaintext highlighter-rouge">sans GAS/sans frais de transaction</code> ou avec des frais moins élevés ou bien en montant des noeuds spécifiques qui seront les seuls participants de confiance du réseau et bien sûr l’un des atouts du POA c’est qu’il n’utilise pas des réssources énormes pour la validation des blocs (à l’instar du consensus POW, Proof Of Work).</p>
 
 <p>Ceci dit, ce type de réseau est utile pour les tests en local, comme pour des solutions pour des organismes privés qui cherchent à monter une solution blockchain en limitant l’accès à des membres bien définis.</p>
 

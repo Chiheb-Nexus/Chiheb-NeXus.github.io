@@ -5,9 +5,9 @@
     <description>Blog dédié à la technologie de la Blockchain et au développement informatique en général</description>
     <link>https://chiheb-nexus.github.io/</link>
     <atom:link href="https://chiheb-nexus.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Dec 2020 01:53:55 +0100</pubDate>
-    <lastBuildDate>Wed, 16 Dec 2020 01:53:55 +0100</lastBuildDate>
-    <generator>Jekyll v4.0.0</generator>
+    <pubDate>Wed, 10 Feb 2021 00:18:03 +0100</pubDate>
+    <lastBuildDate>Wed, 10 Feb 2021 00:18:03 +0100</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>Python: Multithreading VS Multiprocessing</title>
@@ -35,7 +35,7 @@
     
       <item>
         <title>Fullstack Python web app: Flask &amp; React &amp; Webpack</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://repository-images.githubusercontent.com/197383174/16a44e80-a92d-11e9-973b-2b285df0da3b&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt; &lt;p&gt;Le monde du développent des sites web est tellement vaste que chaque jour nous, les développeurs, sommes amenés à utiliser/apprendre des nouvelles technologies. La tendance à la mode, aujourd’hui, c’est du faire des SPA (Single Page Application) en utilisant, généralement, React, Angular et VueJS (je note aussi Svelte) frameworks. Cependant, comme étant un développeur Python à la base, j’ai cherché sur net un tutoriel qui étale comment on devra procéder pour créer un site web en utilisant &lt;code class=&quot;highlighter-rouge&quot;&gt;Flask&lt;/code&gt; et &lt;code class=&quot;highlighter-rouge&quot;&gt;React&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;Hélas, tout ce que j’ai trouvé ce sont soi des tutoriels qui utilisent...</description>
+        <description>&lt;p&gt;&lt;img src=&quot;https://repository-images.githubusercontent.com/197383174/16a44e80-a92d-11e9-973b-2b285df0da3b&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt; &lt;p&gt;Le monde du développent des sites web est tellement vaste que chaque jour nous, les développeurs, sommes amenés à utiliser/apprendre des nouvelles technologies. La tendance à la mode, aujourd’hui, c’est du faire des SPA (Single Page Application) en utilisant, généralement, React, Angular et VueJS (je note aussi Svelte) frameworks. Cependant, comme étant un développeur Python à la base, j’ai cherché sur net un tutoriel qui étale comment on devra procéder pour créer un site web en utilisant &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Flask&lt;/code&gt; et &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;React&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;Hélas, tout ce que j’ai trouvé ce sont soi des tutoriels...</description>
         <pubDate>Tue, 31 Dec 2019 17:46:31 +0100</pubDate>
         <link>https://chiheb-nexus.github.io/flask-react-app/</link>
         <guid isPermaLink="true">https://chiheb-nexus.github.io/flask-react-app/</guid>
